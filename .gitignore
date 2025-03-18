@@ -1,0 +1,30 @@
+app.config.timestamp_*.js
+node_modules
+.DS_Store
+.idea
+.next
+dev.db
+.env
+
+# Additional recommended entries
+# Database-related
+*.db-journal
+dev.db-journal
+
+# Environment files
+.env.*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+
+# Editor files
+*.swp
+*~
