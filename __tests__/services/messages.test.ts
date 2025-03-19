@@ -2,6 +2,9 @@ import { test, expect, beforeEach, vi, it, describe } from 'vitest'
 import { messagesService } from '@/lib/services/messages'
 import { db } from '@/lib/db'
 
+// Add this line to mock the db module
+vi.mock('@/lib/db')
+
 describe('Message Service', () => {
     const mockMessage = {
         id: 1,
@@ -18,8 +21,8 @@ describe('Message Service', () => {
     })
 
     it('should create a new message', async () => {
-        // Setup mock return value
-        vi.mocked(db.message.create).mockResolvedValue(mockMessage)
+        // Setup mock return value - fixed to use jest-style mocking
+        (db.message.create as any).mockResolvedValue(mockMessage)
 
         // Call the service
         const result = await messagesService.send({
@@ -43,9 +46,10 @@ describe('Message Service', () => {
     })
 
     it('should handle errors when creating a message', async () => {
-        // Setup mock to throw an error
-        const error = new Error('Database error')
-        vi.mocked(db.message.create).mockRejectedValue
+        // Setup mock to throw an error - fixed to properly set up rejection
+        const error = new Error('Mock database error');
+
+        (db.message.create as any).mockRejectedValue(error)
 
         // Call the service and expect it to throw
         await expect(messagesService.send({
