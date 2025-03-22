@@ -15,11 +15,11 @@ import { Route as LoginImport } from './routes/login'
 import { Route as AuthImport } from './routes/_auth'
 import { Route as AppLayoutImport } from './routes/_appLayout'
 import { Route as AppLayoutIndexImport } from './routes/_appLayout/index'
-import { Route as AuthDashboardLayoutImport } from './routes/_auth/_dashboardLayout'
 import { Route as AppLayoutCountImport } from './routes/_appLayout/count'
 import { Route as AppLayoutContactImport } from './routes/_appLayout/contact'
 import { Route as AppLayoutCalendarImport } from './routes/_appLayout/calendar'
-import { Route as AuthDashboardLayoutDashboardImport } from './routes/_auth/_dashboardLayout/dashboard'
+import { Route as AuthDashboardLayoutRouteImport } from './routes/_auth/_dashboardLayout/route'
+import { Route as AuthDashboardLayoutDashboardIndexImport } from './routes/_auth/_dashboardLayout/dashboard/index'
 
 // Create/Update Routes
 
@@ -45,11 +45,6 @@ const AppLayoutIndexRoute = AppLayoutIndexImport.update({
   getParentRoute: () => AppLayoutRoute,
 } as any)
 
-const AuthDashboardLayoutRoute = AuthDashboardLayoutImport.update({
-  id: '/_dashboardLayout',
-  getParentRoute: () => AuthRoute,
-} as any)
-
 const AppLayoutCountRoute = AppLayoutCountImport.update({
   id: '/count',
   path: '/count',
@@ -68,11 +63,16 @@ const AppLayoutCalendarRoute = AppLayoutCalendarImport.update({
   getParentRoute: () => AppLayoutRoute,
 } as any)
 
-const AuthDashboardLayoutDashboardRoute =
-  AuthDashboardLayoutDashboardImport.update({
-    id: '/dashboard',
-    path: '/dashboard',
-    getParentRoute: () => AuthDashboardLayoutRoute,
+const AuthDashboardLayoutRouteRoute = AuthDashboardLayoutRouteImport.update({
+  id: '/_dashboardLayout',
+  getParentRoute: () => AuthRoute,
+} as any)
+
+const AuthDashboardLayoutDashboardIndexRoute =
+  AuthDashboardLayoutDashboardIndexImport.update({
+    id: '/dashboard/',
+    path: '/dashboard/',
+    getParentRoute: () => AuthDashboardLayoutRouteRoute,
   } as any)
 
 // Populate the FileRoutesByPath interface
@@ -100,6 +100,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
+    '/_auth/_dashboardLayout': {
+      id: '/_auth/_dashboardLayout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AuthDashboardLayoutRouteImport
+      parentRoute: typeof AuthImport
+    }
     '/_appLayout/calendar': {
       id: '/_appLayout/calendar'
       path: '/calendar'
@@ -121,13 +128,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppLayoutCountImport
       parentRoute: typeof AppLayoutImport
     }
-    '/_auth/_dashboardLayout': {
-      id: '/_auth/_dashboardLayout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof AuthDashboardLayoutImport
-      parentRoute: typeof AuthImport
-    }
     '/_appLayout/': {
       id: '/_appLayout/'
       path: '/'
@@ -135,12 +135,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppLayoutIndexImport
       parentRoute: typeof AppLayoutImport
     }
-    '/_auth/_dashboardLayout/dashboard': {
-      id: '/_auth/_dashboardLayout/dashboard'
+    '/_auth/_dashboardLayout/dashboard/': {
+      id: '/_auth/_dashboardLayout/dashboard/'
       path: '/dashboard'
       fullPath: '/dashboard'
-      preLoaderRoute: typeof AuthDashboardLayoutDashboardImport
-      parentRoute: typeof AuthDashboardLayoutImport
+      preLoaderRoute: typeof AuthDashboardLayoutDashboardIndexImport
+      parentRoute: typeof AuthDashboardLayoutRouteImport
     }
   }
 }
@@ -165,45 +165,49 @@ const AppLayoutRouteWithChildren = AppLayoutRoute._addFileChildren(
   AppLayoutRouteChildren,
 )
 
-interface AuthDashboardLayoutRouteChildren {
-  AuthDashboardLayoutDashboardRoute: typeof AuthDashboardLayoutDashboardRoute
+interface AuthDashboardLayoutRouteRouteChildren {
+  AuthDashboardLayoutDashboardIndexRoute: typeof AuthDashboardLayoutDashboardIndexRoute
 }
 
-const AuthDashboardLayoutRouteChildren: AuthDashboardLayoutRouteChildren = {
-  AuthDashboardLayoutDashboardRoute: AuthDashboardLayoutDashboardRoute,
-}
+const AuthDashboardLayoutRouteRouteChildren: AuthDashboardLayoutRouteRouteChildren =
+  {
+    AuthDashboardLayoutDashboardIndexRoute:
+      AuthDashboardLayoutDashboardIndexRoute,
+  }
 
-const AuthDashboardLayoutRouteWithChildren =
-  AuthDashboardLayoutRoute._addFileChildren(AuthDashboardLayoutRouteChildren)
+const AuthDashboardLayoutRouteRouteWithChildren =
+  AuthDashboardLayoutRouteRoute._addFileChildren(
+    AuthDashboardLayoutRouteRouteChildren,
+  )
 
 interface AuthRouteChildren {
-  AuthDashboardLayoutRoute: typeof AuthDashboardLayoutRouteWithChildren
+  AuthDashboardLayoutRouteRoute: typeof AuthDashboardLayoutRouteRouteWithChildren
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
-  AuthDashboardLayoutRoute: AuthDashboardLayoutRouteWithChildren,
+  AuthDashboardLayoutRouteRoute: AuthDashboardLayoutRouteRouteWithChildren,
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '': typeof AuthDashboardLayoutRouteWithChildren
+  '': typeof AuthDashboardLayoutRouteRouteWithChildren
   '/login': typeof LoginRoute
   '/calendar': typeof AppLayoutCalendarRoute
   '/contact': typeof AppLayoutContactRoute
   '/count': typeof AppLayoutCountRoute
   '/': typeof AppLayoutIndexRoute
-  '/dashboard': typeof AuthDashboardLayoutDashboardRoute
+  '/dashboard': typeof AuthDashboardLayoutDashboardIndexRoute
 }
 
 export interface FileRoutesByTo {
-  '': typeof AuthDashboardLayoutRouteWithChildren
+  '': typeof AuthDashboardLayoutRouteRouteWithChildren
   '/login': typeof LoginRoute
   '/calendar': typeof AppLayoutCalendarRoute
   '/contact': typeof AppLayoutContactRoute
   '/count': typeof AppLayoutCountRoute
   '/': typeof AppLayoutIndexRoute
-  '/dashboard': typeof AuthDashboardLayoutDashboardRoute
+  '/dashboard': typeof AuthDashboardLayoutDashboardIndexRoute
 }
 
 export interface FileRoutesById {
@@ -211,12 +215,12 @@ export interface FileRoutesById {
   '/_appLayout': typeof AppLayoutRouteWithChildren
   '/_auth': typeof AuthRouteWithChildren
   '/login': typeof LoginRoute
+  '/_auth/_dashboardLayout': typeof AuthDashboardLayoutRouteRouteWithChildren
   '/_appLayout/calendar': typeof AppLayoutCalendarRoute
   '/_appLayout/contact': typeof AppLayoutContactRoute
   '/_appLayout/count': typeof AppLayoutCountRoute
-  '/_auth/_dashboardLayout': typeof AuthDashboardLayoutRouteWithChildren
   '/_appLayout/': typeof AppLayoutIndexRoute
-  '/_auth/_dashboardLayout/dashboard': typeof AuthDashboardLayoutDashboardRoute
+  '/_auth/_dashboardLayout/dashboard/': typeof AuthDashboardLayoutDashboardIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -236,12 +240,12 @@ export interface FileRouteTypes {
     | '/_appLayout'
     | '/_auth'
     | '/login'
+    | '/_auth/_dashboardLayout'
     | '/_appLayout/calendar'
     | '/_appLayout/contact'
     | '/_appLayout/count'
-    | '/_auth/_dashboardLayout'
     | '/_appLayout/'
-    | '/_auth/_dashboardLayout/dashboard'
+    | '/_auth/_dashboardLayout/dashboard/'
   fileRoutesById: FileRoutesById
 }
 
@@ -290,6 +294,13 @@ export const routeTree = rootRoute
     "/login": {
       "filePath": "login.tsx"
     },
+    "/_auth/_dashboardLayout": {
+      "filePath": "_auth/_dashboardLayout/route.tsx",
+      "parent": "/_auth",
+      "children": [
+        "/_auth/_dashboardLayout/dashboard/"
+      ]
+    },
     "/_appLayout/calendar": {
       "filePath": "_appLayout/calendar.tsx",
       "parent": "/_appLayout"
@@ -302,19 +313,12 @@ export const routeTree = rootRoute
       "filePath": "_appLayout/count.tsx",
       "parent": "/_appLayout"
     },
-    "/_auth/_dashboardLayout": {
-      "filePath": "_auth/_dashboardLayout.tsx",
-      "parent": "/_auth",
-      "children": [
-        "/_auth/_dashboardLayout/dashboard"
-      ]
-    },
     "/_appLayout/": {
       "filePath": "_appLayout/index.tsx",
       "parent": "/_appLayout"
     },
-    "/_auth/_dashboardLayout/dashboard": {
-      "filePath": "_auth/_dashboardLayout/dashboard.tsx",
+    "/_auth/_dashboardLayout/dashboard/": {
+      "filePath": "_auth/_dashboardLayout/dashboard/index.tsx",
       "parent": "/_auth/_dashboardLayout"
     }
   }
