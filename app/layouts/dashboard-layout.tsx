@@ -1,13 +1,10 @@
 import { Outlet } from "@tanstack/react-router";
 
 export function DashboardLayout() {
-
+    {/* TODO? */ }
     return (
-        <div>
-            <div>I'm a layout</div>
-            <div>
-                <Outlet />
-            </div>
-        </div>
+        <>
+            <Outlet />
+        </>
     )
 }
