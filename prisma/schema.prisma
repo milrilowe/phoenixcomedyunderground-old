@@ -38,7 +38,7 @@ model Show {
 
 model Message {
   id        Int      @id @default(autoincrement())
-  name      String
+  subject   String
   email     String
   message   String
   read      Boolean  @default(false)
