@@ -25,15 +25,25 @@ model Subscriber {
 }
 
 model Show {
-  id          Int      @id @default(autoincrement())
-  title       String
-  date        DateTime
-  time        DateTime
-  location    String?
-  description String
-  image       String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id           Int       @id @default(autoincrement())
+  title        String
+  date         DateTime
+  time         DateTime
+  endTime      DateTime?
+  location     String?
+  venue        String?
+  description  String
+  price        Decimal?  @db.Decimal(10, 2)
+  ticketUrl    String?
+  performers   String?
+  featured     Boolean   @default(false)
+  status       String    @default("scheduled") // scheduled, cancelled, soldout
+  maxCapacity  Int?
+  soldTickets  Int?      @default(0)
+  image        String?
+  published    Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 }
 
 model Message {

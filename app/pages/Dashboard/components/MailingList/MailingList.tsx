@@ -11,7 +11,7 @@ import { format } from 'date-fns';
 import { Subscriber } from '@/lib/types/subscribers';
 import { Checkbox } from '@/components/ui/checkbox';
 
-export function MailingListComponent() {
+export function MailingList() {
     // State for subscribers
     const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
     const [filteredSubscribers, setFilteredSubscribers] = useState<Subscriber[]>([]);

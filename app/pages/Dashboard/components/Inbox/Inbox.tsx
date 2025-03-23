@@ -4,14 +4,14 @@ import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
-    Loader2, Search, Inbox, Clipboard, RefreshCw,
+    Loader2, Search, Inbox as InboxIcon, Clipboard, RefreshCw,
     ArrowLeft, Reply, Mail, Trash2
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { Message } from '@/lib/types/messages';
 import { Checkbox } from '@/components/ui/checkbox';
 
-export function InboxComponent() {
+export function Inbox() {
     // State for messages
     const [messages, setMessages] = useState<Message[]>([]);
     const [filteredMessages, setFilteredMessages] = useState<Message[]>([]);
@@ -309,7 +309,7 @@ export function InboxComponent() {
                             </div>
                         ) : filteredMessages.length === 0 ? (
                             <div className="text-center py-8 text-zinc-500">
-                                <Inbox className="h-12 w-12 mx-auto mb-4 text-zinc-600" />
+                                <InboxIcon className="h-12 w-12 mx-auto mb-4 text-zinc-600" />
                                 <p>No messages found</p>
                             </div>
                         ) : (
