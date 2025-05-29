@@ -39,8 +39,8 @@
     --sidebar-border: oklch(0.269 0 0);
     --sidebar-ring: oklch(0.439 0 0);
 
-    --navbar-height: 65px;
-    --app-layout-padding: 3rem;
+    --navbar-height: 0px;
+    --app-layout-padding: 0rem;
 }
 
 @theme inline {

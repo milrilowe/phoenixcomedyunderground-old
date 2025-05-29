@@ -3,7 +3,17 @@ import { DesktopCalendarView, MobileCalendarView, ShowsList, ViewToggle } from "
 import { CalendarIcon, Mic } from "lucide-react";
 
 export function Calendar() {
-    const events = [];
+    const events = [{
+        id: '1',
+        title: 'Comedy Night at The Laugh Factory',
+        start: '2025-06-15T20:00:00',
+        end: '2025-06-15T22:00:00',
+        date: new Date('2025-06-15'),
+        description: 'Join us for a night of laughter with top comedians!',
+        location: 'The Laugh Factory, Main Stage',
+        image: '/vu-flyer.png',
+        isSoldOut: false,
+    }];
 
     if (events.length === 0) return (
         <div className="flex flex-col items-center justify-center py-16 px-4 text-center">

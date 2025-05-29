@@ -21,7 +21,7 @@ export function ShowsList({ events }: { events: Array<any> }) {
                         <div>
                             <h3 className="text-2xl font-semibold text-white mb-1">{event.name}</h3>
                             <p className="text-lg text-white mb-4">
-                                {format(new Date(event.date), 'MMMM d')} - {event.showtime}
+                                {format(event.date, 'MMMM d')} - {event.showtime}
                             </p>
 
                             <p className="text-zinc-400 mb-4 line-clamp-2">

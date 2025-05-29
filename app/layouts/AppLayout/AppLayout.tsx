@@ -1,10 +1,6 @@
 import { MailingListDialog } from "@/components"
-import { Button } from "@/components/ui/button"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Link, Outlet } from "@tanstack/react-router"
-import { Menu } from "lucide-react"
-import { useState } from "react"
 import { MobileNav } from "./components"
 import { Toaster } from "sonner"
 
@@ -26,14 +22,6 @@ export function AppLayout({ children }) {
                         <div className="hidden md:block">
                             <NavigationMenu>
                                 <NavigationMenuList className="flex space-x-8">
-                                    <NavigationMenuItem>
-                                        <NavigationMenuLink
-                                            href="/calendar"
-                                            className="text-zinc-300 hover:text-zinc-100 transition-colors"
-                                        >
-                                            Calendar
-                                        </NavigationMenuLink>
-                                    </NavigationMenuItem>
                                     <NavigationMenuItem>
                                         <NavigationMenuLink
                                             href="/contact"

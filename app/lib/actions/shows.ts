@@ -1,4 +1,3 @@
-// app/lib/actions/shows.ts
 import { notFound } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
 import { showsService } from '@/lib/services/shows'
@@ -7,7 +6,7 @@ import { z } from 'zod'
 
 // Get all shows
 export const fetchShows = createServerFn({ method: 'GET' })
-    .handler(async () => {
+    .handler(async ({ }) => {
         return showsService.getAll()
     })
 

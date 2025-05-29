@@ -43,16 +43,6 @@ export function MobileNav() {
                             <div className="h-px bg-zinc-800/60 mx-6 my-2"></div>
 
                             <Link
-                                to="/calendar"
-                                className="flex items-center px-6 py-4 text-base font-medium text-zinc-100 hover:bg-zinc-900 transition-colors"
-                                onClick={handleLinkClick}
-                            >
-                                <span>Events</span>
-                            </Link>
-
-                            <div className="h-px bg-zinc-800/60 mx-6 my-2"></div>
-
-                            <Link
                                 to="/contact"
                                 className="flex items-center px-6 py-4 text-base font-medium text-zinc-100 hover:bg-zinc-900 transition-colors"
                                 onClick={handleLinkClick}
