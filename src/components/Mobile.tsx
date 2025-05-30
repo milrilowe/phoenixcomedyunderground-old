@@ -51,7 +51,7 @@ export function Mobile() {
                     {/* Title section - much smaller */}
                     <div className="text-center pt-6 pb-4 px-4">
                         <h1 className="text-2xl font-black text-zinc-900 leading-none tracking-tight mb-2">
-                            AS ABOVE, SO BELOW
+                            Phoenix
                         </h1>
                         <p className="text-sm text-zinc-700 font-medium uppercase tracking-wider">
                             Underground Comedy

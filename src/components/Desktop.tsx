@@ -5,7 +5,8 @@ import { Loader2, Instagram } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from '@/components/ui/input';
 import { subscribe } from '@/lib/actions/subscribers';
-import type { subscribeSchema, SubscribeInput } from '@/lib/schemas/subscribers';
+import { subscribeSchema } from '@/lib/schemas/subscribers';
+import type { SubscribeInput } from '@/lib/schemas/subscribers';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 
 export function Desktop() {
@@ -84,20 +85,32 @@ export function Desktop() {
                                 <div className="w-24 h-1 bg-zinc-800 mx-auto lg:mx-0"></div>
 
                                 <p className="text-xl md:text-2xl text-zinc-700 font-medium uppercase tracking-wider">
-                                    Underground Comedy
+                                    Phoenix Underground Comedy
                                 </p>
                             </div>
 
                             {/* Call to action */}
                             <div className="space-y-6">
-                                <Button
-                                    asChild
-                                    className="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-xl px-12 py-6 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-lg transform hover:scale-105 transition-all duration-200 uppercase tracking-wide"
-                                >
-                                    <a href="https://www.eventbrite.com/e/phoenix-comedy-underground-best-of-phoenix-showcase-tickets-1380218563879" target="_blank" rel="noopener noreferrer">
-                                        Get Tickets
+                                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                                    <Button
+                                        asChild
+                                        className="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-xl px-12 py-6 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-lg transform hover:scale-105 transition-all duration-200 uppercase tracking-wide"
+                                    >
+                                        <a href="https://www.eventbrite.com/e/phoenix-comedy-underground-best-of-phoenix-showcase-tickets-1380218563879" target="_blank" rel="noopener noreferrer">
+                                            Get Tickets
+                                        </a>
+                                    </Button>
+
+                                    {/* Clean Instagram with roll-out effect */}
+                                    <a
+                                        href="https://instagram.com/phoenixcomedyunderground"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-zinc-800 hover:text-zinc-600 transition-colors duration-300 hover:animate-pulse"
+                                    >
+                                        <Instagram className="w-10 h-10 transition-transform duration-200 hover:scale-110 hover:rotate-3 hover:skew-x-1" />
                                     </a>
-                                </Button>
+                                </div>
 
                                 {/* 21+ disclaimer */}
                                 <p className="text-zinc-600 text-sm font-medium uppercase tracking-wide">
@@ -154,18 +167,6 @@ export function Desktop() {
                             </Form>
 
                             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-xs">
-                                <a
-                                    href="https://instagram.com/phoenixcomedyunderground"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-1 text-yellow-400 hover:text-yellow-300 transition-colors"
-                                >
-                                    <Instagram className="w-4 h-4" />
-                                    @phoenixcomedyunderground
-                                </a>
-
-                                <span className="text-yellow-400/60">•</span>
-
                                 <a href="mailto:contact@phoenixcomedyunderground.com" className="text-yellow-400/80 hover:text-yellow-300 underline">
                                     contact@phoenixcomedyunderground.com
                                 </a>
@@ -173,7 +174,7 @@ export function Desktop() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </div >
+        </main >
     );
 }
