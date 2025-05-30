@@ -5,7 +5,7 @@ import { Loader2, Instagram } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from '@/components/ui/input';
 import { subscribe } from '@/lib/actions/subscribers';
-import { subscribeSchema, SubscribeInput } from '@/lib/schemas/subscribers';
+import type { subscribeSchema, SubscribeInput } from '@/lib/schemas/subscribers';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 
 export function Desktop() {
@@ -17,7 +17,7 @@ export function Desktop() {
         defaultValues: {
             email: '',
         }
-    });//
+    });
 
     async function onSubmit(data: SubscribeInput) {
         startTransition(async () => {

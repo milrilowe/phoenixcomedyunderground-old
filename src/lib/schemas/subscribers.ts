@@ -1,7 +1,13 @@
-import { z } from 'zod';
+import { z } from 'zod'
+
+export const emailSchema = z.string().email('Please provide a valid email address')
 
 export const subscribeSchema = z.object({
-  email: z.string().email('Please enter a valid email address'),
-});
+    email: emailSchema,
+})
 
-export type SubscribeInput = z.infer<typeof subscribeSchema>;
+export const subscriberIdSchema = z.number().int().positive('ID must be a positive integer')
+
+// Types derived from schemas
+export type SubscribeInput = z.infer<typeof subscribeSchema>
+export type SubscriberId = z.infer<typeof subscriberIdSchema>
