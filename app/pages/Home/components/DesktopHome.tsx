@@ -17,7 +17,7 @@ export function DesktopHome() {
         defaultValues: {
             email: '',
         }
-    });
+    });//
 
     async function onSubmit(data: SubscribeInput) {
         startTransition(async () => {
@@ -76,9 +76,9 @@ export function DesktopHome() {
                             {/* Title with vintage poster feel */}
                             <div className="space-y-4">
                                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-zinc-900 leading-none tracking-tight">
-                                    NEXT
+                                    As above,
                                     <br />
-                                    <span className="text-4xl md:text-5xl lg:text-6xl text-zinc-700">SHOW</span>
+                                    <span className="text-4xl md:text-5xl lg:text-6xl text-zinc-700">So below</span>
                                 </h1>
 
                                 <div className="w-24 h-1 bg-zinc-800 mx-auto lg:mx-0"></div>
