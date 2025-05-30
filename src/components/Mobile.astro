@@ -2,18 +2,20 @@
 import { EmailForm } from "./EmailForm";
 ---
 
-<main
+<section
     class="md:hidden min-h-screen relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100"
+    aria-label="Phoenix Comedy Underground showcase mobile layout"
 >
     <div
         class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[length:15px_15px]"
+        aria-hidden="true"
     >
     </div>
 
     <div class="relative z-10">
         <div class="h-screen flex flex-col">
-            <!-- Title -->
-            <div
+            <!-- Header -->
+            <header
                 class="flex flex-col cols-1 pt-4 justify-center items-center text-center px-4"
             >
                 <h1>
@@ -22,11 +24,14 @@ import { EmailForm } from "./EmailForm";
                         target="_blank"
                         rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 text-zinc-700 hover:text-zinc-600 transition-colors duration-300"
+                        aria-label="Follow Phoenix Comedy Underground on Instagram"
                     >
                         <svg
                             class="w-4 h-4 transition-transform duration-200 hover:scale-110"
                             fill="currentColor"
                             viewBox="0 0 24 24"
+                            role="img"
+                            aria-label="Instagram"
                         >
                             <path
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
@@ -39,30 +44,36 @@ import { EmailForm } from "./EmailForm";
                         </span>
                     </a>
                 </h1>
-            </div>
+            </header>
 
-            <!-- Flyer with CTA -->
-            <div
+            <!-- Main Content -->
+            <main
                 class="flex-3 flex items-center justify-center px-4 pb-20 relative"
             >
-                <div class="relative max-w-sm w-full">
+                <article class="relative max-w-sm w-full">
                     <div
                         class="absolute inset-0 translate-x-3 translate-y-3 bg-black/20 rounded-lg blur-sm"
+                        aria-hidden="true"
                     >
                     </div>
-                    <div class="relative">
+                    <figure class="relative">
                         <img
                             src="/vu-flyer.png"
-                            alt="Phoenix Comedy Underground: Best of Showcase - June 25"
+                            alt="Phoenix Comedy Underground Best of Phoenix Showcase flyer - June 25, 2025 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
                             class="w-full h-auto object-contain rounded-lg shadow-xl"
+                            loading="eager"
+                            width="300"
+                            height="450"
                         />
-                    </div>
+                    </figure>
                     <div
                         class="absolute -top-2 left-8 w-10 h-5 bg-yellow-200/60 rotate-12 rounded-sm shadow-md border border-yellow-300/40"
+                        aria-hidden="true"
                     >
                     </div>
                     <div
                         class="absolute -bottom-2 right-12 w-12 h-6 bg-yellow-200/60 -rotate-6 rounded-sm shadow-md border border-yellow-300/40"
+                        aria-hidden="true"
                     >
                     </div>
 
@@ -73,24 +84,28 @@ import { EmailForm } from "./EmailForm";
                             target="_blank"
                             rel="noopener noreferrer"
                             class="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-lg px-6 py-3 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
+                            aria-label="Get tickets for Phoenix Comedy Underground Best of Phoenix Showcase on Eventbrite"
                         >
                             Get Tickets
                         </a>
                     </div>
 
-                    <!-- 21+ disclaimer -->
+                    <!-- Event details -->
                     <div class="absolute -bottom-6 left-4">
-                        <p
+                        <div
                             class="text-zinc-600 text-xs font-medium uppercase tracking-wide bg-amber-50/90 px-2 py-1 rounded border border-zinc-300"
                         >
-                            21+ Event
-                        </p>
+                            <time datetime="2025-06-25T19:30:00-07:00"
+                                >June 25</time
+                            > • 21+ Event
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Scroll indicator -->
                 <div
                     class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center"
+                    aria-label="Scroll down for more information"
                 >
                     <div class="animate-bounce">
                         <svg
@@ -98,6 +113,7 @@ import { EmailForm } from "./EmailForm";
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
+                            aria-hidden="true"
                         >
                             <path
                                 stroke-linecap="round"
@@ -110,18 +126,33 @@ import { EmailForm } from "./EmailForm";
                         More
                     </p>
                 </div>
-            </div>
+            </main>
         </div>
 
-        <!-- Email form section - only this needs React -->
-        <div
+        <!-- Email form section -->
+        <footer
             class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6"
         >
             <div class="px-4">
                 <div class="text-center space-y-4 max-w-md mx-auto">
-                    <h3 class="text-xl font-bold uppercase tracking-wider">
+                    <h2 class="text-xl font-bold uppercase tracking-wider">
                         Stay in the Loop
-                    </h3>
+                    </h2>
+
+                    <!-- Event Details -->
+                    <div class="text-yellow-400/80 text-sm space-y-1">
+                        <p>
+                            <time datetime="2025-06-25T19:30:00-07:00"
+                                >June 25, 2025</time
+                            >
+                        </p>
+                        <address class="not-italic">
+                            Cornish Pasty Co.<br />
+                            7 W. Monroe, Phoenix, AZ
+                        </address>
+                        <p>Doors: 7:30 PM • Show: 8:00 PM</p>
+                    </div>
+
                     <EmailForm client:load />
                     <div class="pt-4 border-t border-yellow-400/20">
                         <a
@@ -133,6 +164,6 @@ import { EmailForm } from "./EmailForm";
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
-</main>
+</section>
