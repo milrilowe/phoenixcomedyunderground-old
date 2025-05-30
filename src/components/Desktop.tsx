@@ -3,15 +3,17 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2, Instagram } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Input } from '@/components/ui/input';
-import { subscribe } from '@/lib/actions/subscribers';
-import { subscribeSchema } from '@/lib/schemas/subscribers';
-import type { SubscribeInput } from '@/lib/schemas/subscribers';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { EmailForm } from '@/components/EmailForm';
+import z from 'zod';
 
 export function Desktop() {
     const [isPending, startTransition] = React.useTransition();
     const [buttonText, setButtonText] = React.useState<string>('Join');
+
+    const subscribeSchema = z.object({
+        email: z.string().email('Please provide a valid email address')
+    })
+
 
     const form = useForm<SubscribeInput>({
         resolver: zodResolver(subscribeSchema),
@@ -125,46 +127,8 @@ export function Desktop() {
                 <div className="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-4">
                     <div className="max-w-4xl mx-auto px-4">
                         <div className="text-center space-y-3">
-                            <Form {...form}>
-                                <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-md mx-auto">
-                                    <div className="flex flex-col sm:flex-row gap-3">
-                                        {/* Honeypot */}
-                                        <Input
-                                            type="text"
-                                            className="absolute -left-[9999px]"
-                                            tabIndex={-1}
-                                            autoComplete="off"
-                                        />
+                            <EmailForm className="max-w-md mx-auto" />
 
-                                        <FormField
-                                            control={form.control}
-                                            name="email"
-                                            render={({ field }) => (
-                                                <FormItem className="flex-1">
-                                                    <FormControl>
-                                                        <Input
-                                                            type="email"
-                                                            placeholder="your@email.com"
-                                                            className="bg-yellow-400 text-zinc-900 placeholder:text-zinc-600 border-2 border-yellow-400 rounded-none font-medium"
-                                                            {...field}
-                                                        />
-                                                    </FormControl>
-                                                    <FormMessage className="text-red-400 text-xs" />
-                                                </FormItem>
-                                            )}
-                                        />
-
-                                        <Button
-                                            type="submit"
-                                            disabled={isPending}
-                                            className="bg-yellow-400 text-zinc-900 hover:bg-yellow-300 font-bold px-6 py-2 rounded-none border-2 border-yellow-400 hover:border-yellow-300 uppercase tracking-wide text-sm"
-                                        >
-                                            {isPending && <Loader2 className="mr-2 h-3 w-3 animate-spin" />}
-                                            {buttonText}
-                                        </Button>
-                                    </div>
-                                </form>
-                            </Form>
 
                             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-xs">
                                 <a href="mailto:contact@phoenixcomedyunderground.com" className="text-yellow-400/80 hover:text-yellow-300 underline">

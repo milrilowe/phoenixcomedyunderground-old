@@ -3,13 +3,15 @@ import type { APIRoute } from 'astro';
 import { subscribeSchema } from '@/lib/schemas/subscribers';
 import { subscribersService } from '@/lib/services/subscribers';
 
+export const prerender = false; // Add this line
+
 export const POST: APIRoute = async ({ request }) => {
     try {
         const data = await request.json();
-        
+
         // Validate the data
         const validatedData = subscribeSchema.parse(data);
-        
+
         // Check if already subscribed
         const existing = await subscribersService.getByEmail(validatedData.email);
 
@@ -34,7 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
             status: 200,
             headers: { 'Content-Type': 'application/json' }
         });
-        
+
     } catch (error) {
         console.error('Subscription error:', error);
         return new Response(JSON.stringify({
