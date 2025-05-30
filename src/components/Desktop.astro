@@ -33,7 +33,7 @@ import { EmailForm } from "./EmailForm";
                             class="relative transform -rotate-1 hover:rotate-0 transition-transform duration-500"
                         >
                             <img
-                                src="/vu-flyer.png"
+                                src="/cornish-pasty-06-25-2025.png"
                                 alt="Phoenix Comedy Underground Best of Phoenix Showcase flyer - June 25, 2025 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
                                 class="max-w-full h-auto max-h-[75vh] object-contain rounded-lg shadow-xl"
                                 loading="eager"
@@ -69,7 +69,11 @@ import { EmailForm } from "./EmailForm";
                                 >So below</span
                             >
                         </h1>
-                        <div class="w-24 h-1 bg-zinc-800 mx-auto lg:mx-0" aria-hidden="true"></div>
+                        <div
+                            class="w-24 h-1 bg-zinc-800 mx-auto lg:mx-0"
+                            aria-hidden="true"
+                        >
+                        </div>
                         <p
                             class="text-xl md:text-2xl text-zinc-700 font-medium uppercase tracking-wider"
                         >
@@ -120,18 +124,22 @@ import { EmailForm } from "./EmailForm";
                                 </svg>
                             </a>
                         </div>
-                        
+
                         <!-- Event Details -->
                         <div class="space-y-2 text-zinc-600">
                             <p class="text-lg font-semibold">
-                                <time datetime="2025-06-25T19:30:00-07:00">June 25, 2025</time>
+                                <time datetime="2025-06-25T19:30:00-07:00"
+                                    >June 25, 2025</time
+                                >
                             </p>
                             <address class="not-italic">
-                                Cornish Pasty Co.<br>
+                                Cornish Pasty Co.<br />
                                 7 W. Monroe, Phoenix, AZ
                             </address>
                             <p>Doors: 7:30 PM • Show: 8:00 PM</p>
-                            <p class="text-sm font-medium uppercase tracking-wide">
+                            <p
+                                class="text-sm font-medium uppercase tracking-wide"
+                            >
                                 21+ Event
                             </p>
                         </div>
@@ -146,9 +154,6 @@ import { EmailForm } from "./EmailForm";
         >
             <div class="max-w-4xl mx-auto px-4">
                 <div class="text-center space-y-3">
-                    <h2 class="text-lg font-bold uppercase tracking-wider mb-3">
-                        Stay Updated
-                    </h2>
                     <EmailForm client:load className="max-w-md mx-auto" />
                     <div
                         class="flex flex-col sm:flex-row justify-center items-center gap-4 text-xs"
