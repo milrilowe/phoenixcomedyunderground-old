@@ -1,4 +1,5 @@
 ---
+// src/components/Mobile.astro
 import { EmailForm } from "./EmailForm";
 ---
 
@@ -112,10 +113,9 @@ import { EmailForm } from "./EmailForm";
                     </div>
                 </article>
 
-                <!-- Scroll indicator -->
+                <!-- Scroll indicator with safe area padding -->
                 <div
                     class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center pb-safe"
-                    style="padding-bottom: max(1rem, env(safe-area-inset-bottom));"
                     aria-label="Scroll down for more information"
                 >
                     <div class="animate-bounce">
@@ -140,9 +140,9 @@ import { EmailForm } from "./EmailForm";
             </main>
         </div>
 
-        <!-- Email form section -->
+        <!-- Email form section with safe area padding -->
         <footer
-            class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6"
+            class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6 footer-safe"
         >
             <div class="px-4">
                 <div class="text-center space-y-4 max-w-md mx-auto">
@@ -165,6 +165,7 @@ import { EmailForm } from "./EmailForm";
                     </div>
 
                     <EmailForm client:load />
+
                     <div class="pt-4 border-t border-yellow-400/20">
                         <a
                             href="mailto:contact@phoenixcomedyunderground.com"
