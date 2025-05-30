@@ -116,6 +116,18 @@ const organizationSchema = {
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/vu-flyer.png" as="image" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-264VJ9QCQP"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-264VJ9QCQP");
+    </script>
   </head>
   <body>
     <!-- Skip to main content for accessibility -->

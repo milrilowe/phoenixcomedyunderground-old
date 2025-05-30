@@ -1,4 +1,4 @@
-// src/components/EmailForm.jsx
+// src/components/EmailForm.tsx
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -13,6 +13,13 @@ const subscribeSchema = z.object({
     email: z.string().email('Please provide a valid email address')
 });
 
+// Declare gtag function for TypeScript
+declare global {
+    interface Window {
+        gtag: (...args: any[]) => void;
+    }
+}
+
 export function EmailForm({ className = "" }) {
     const [isPending, startTransition] = React.useTransition();
     const [buttonText, setButtonText] = React.useState('Join');
@@ -24,10 +31,20 @@ export function EmailForm({ className = "" }) {
         }
     });
 
-    const onSubmit = React.useCallback(async (data) => {
+    const onSubmit = React.useCallback(async (data: { email: string }) => {
         startTransition(async () => {
             try {
                 const result = await subscribe({ data });
+
+                // Track email signup event
+                if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'sign_up', {
+                        method: 'email',
+                        event_category: 'engagement',
+                        event_label: result.alreadySubscribed ? 'email_already_subscribed' : 'email_new_subscriber',
+                        value: result.alreadySubscribed ? 0 : 1
+                    });
+                }
 
                 if (result.alreadySubscribed) {
                     setButtonText('Already subscribed!');
@@ -39,11 +56,32 @@ export function EmailForm({ className = "" }) {
                 setTimeout(() => setButtonText('Join'), 3000);
             } catch (error) {
                 console.error('Submit error:', error);
+
+                // Track form submission error
+                if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'form_submit_error', {
+                        event_category: 'engagement',
+                        event_label: 'email_signup_error',
+                        value: 0
+                    });
+                }
+
                 setButtonText('Try again');
                 setTimeout(() => setButtonText('Join'), 3000);
             }
         });
     }, [form]);
+
+    // Track form interaction
+    const handleFormFocus = React.useCallback(() => {
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'form_start', {
+                event_category: 'engagement',
+                event_label: 'email_signup_start',
+                value: 1
+            });
+        }
+    }, []);
 
     return (
         <Form {...form}>
@@ -59,6 +97,7 @@ export function EmailForm({ className = "" }) {
                                         type="email"
                                         placeholder="your@email.com"
                                         className="bg-yellow-400 text-zinc-900 placeholder:text-zinc-600 border-2 border-yellow-400 rounded-none font-medium"
+                                        onFocus={handleFormFocus}
                                         {...field}
                                     />
                                 </FormControl>

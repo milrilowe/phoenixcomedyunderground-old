@@ -25,6 +25,11 @@ import { EmailForm } from "./EmailForm";
                         rel="noopener noreferrer"
                         class="inline-flex items-center gap-2 text-zinc-700 hover:text-zinc-600 transition-colors duration-300"
                         aria-label="Follow Phoenix Comedy Underground on Instagram"
+                        onclick="gtag('event', 'click', {
+                          event_category: 'social',
+                          event_label: 'instagram_mobile_header',
+                          value: 1
+                        })"
                     >
                         <svg
                             class="w-4 h-4 transition-transform duration-200 hover:scale-110"
@@ -85,6 +90,11 @@ import { EmailForm } from "./EmailForm";
                             rel="noopener noreferrer"
                             class="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-lg px-6 py-3 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
                             aria-label="Get tickets for Phoenix Comedy Underground Best of Phoenix Showcase on Eventbrite"
+                            onclick="gtag('event', 'click', {
+                              event_category: 'engagement',
+                              event_label: 'get_tickets_mobile',
+                              value: 1
+                            })"
                         >
                             Get Tickets
                         </a>
@@ -95,9 +105,7 @@ import { EmailForm } from "./EmailForm";
                         <div
                             class="text-zinc-600 text-xs font-medium uppercase tracking-wide bg-amber-50/90 px-2 py-1 rounded border border-zinc-300"
                         >
-                            <time datetime="2025-06-25T19:30:00-07:00"
-                                >June 25</time
-                            > • 21+ Event
+                            <time datetime="2025-06-25T19:30:00-07:00">June 25</time> • 21+ Event
                         </div>
                     </div>
                 </article>
@@ -138,26 +146,29 @@ import { EmailForm } from "./EmailForm";
                     <h2 class="text-xl font-bold uppercase tracking-wider">
                         Stay in the Loop
                     </h2>
-
+                    
                     <!-- Event Details -->
                     <div class="text-yellow-400/80 text-sm space-y-1">
                         <p>
-                            <time datetime="2025-06-25T19:30:00-07:00"
-                                >June 25, 2025</time
-                            >
+                            <time datetime="2025-06-25T19:30:00-07:00">June 25, 2025</time>
                         </p>
                         <address class="not-italic">
-                            Cornish Pasty Co.<br />
+                            Cornish Pasty Co.<br>
                             7 W. Monroe, Phoenix, AZ
                         </address>
                         <p>Doors: 7:30 PM • Show: 8:00 PM</p>
                     </div>
-
+                    
                     <EmailForm client:load />
                     <div class="pt-4 border-t border-yellow-400/20">
                         <a
                             href="mailto:contact@phoenixcomedyunderground.com"
                             class="text-yellow-400/80 hover:text-yellow-300 underline text-sm"
+                            onclick="gtag('event', 'click', {
+                              event_category: 'contact',
+                              event_label: 'email_contact_mobile',
+                              value: 1
+                            })"
                         >
                             contact@phoenixcomedyunderground.com
                         </a>
