@@ -1,0 +1,132 @@
+---
+import { EmailForm } from "./EmailForm";
+---
+
+<main
+    class="hidden md:block h-screen relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 overflow-hidden"
+>
+    <!-- Texture overlay -->
+    <div
+        class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[length:20px_20px]"
+    >
+    </div>
+
+    <div class="relative z-10 flex flex-col h-full">
+        <!-- Hero section -->
+        <div class="flex-1 flex items-center justify-center px-4 pt-8 pb-4">
+            <div
+                class="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center"
+            >
+                <!-- Flyer Side -->
+                <div
+                    class="flex justify-center lg:justify-end order-2 lg:order-1"
+                >
+                    <div class="relative">
+                        <div
+                            class="absolute inset-0 translate-x-3 translate-y-3 bg-black/20 rounded-lg blur-sm"
+                        >
+                        </div>
+                        <div
+                            class="relative transform -rotate-1 hover:rotate-0 transition-transform duration-500"
+                        >
+                            <img
+                                src="/vu-flyer.png"
+                                alt="Phoenix Comedy Underground: Best of Showcase - June 25"
+                                class="max-w-full h-auto max-h-[75vh] object-contain rounded-lg shadow-xl"
+                            />
+                        </div>
+                        <div
+                            class="absolute -top-2 left-12 w-12 h-6 bg-yellow-200/60 rotate-12 rounded-sm shadow-md border border-yellow-300/40"
+                        >
+                        </div>
+                        <div
+                            class="absolute -bottom-2 right-16 w-12 h-6 bg-yellow-200/60 -rotate-6 rounded-sm shadow-md border border-yellow-300/40"
+                        >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div
+                    class="space-y-8 order-1 lg:order-2 text-center lg:text-left"
+                >
+                    <div class="space-y-4">
+                        <h1
+                            class="text-5xl md:text-6xl lg:text-7xl font-black text-zinc-900 leading-none tracking-tight"
+                        >
+                            As above,
+                            <br />
+                            <span
+                                class="text-4xl md:text-5xl lg:text-6xl text-zinc-700"
+                                >So below</span
+                            >
+                        </h1>
+                        <div class="w-24 h-1 bg-zinc-800 mx-auto lg:mx-0"></div>
+                        <p
+                            class="text-xl md:text-2xl text-zinc-700 font-medium uppercase tracking-wider"
+                        >
+                            Phoenix Underground Comedy
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6"
+                        >
+                            <a
+                                href="https://www.eventbrite.com/e/phoenix-comedy-underground-best-of-phoenix-showcase-tickets-1380218563879"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-xl px-12 py-6 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-lg transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
+                            >
+                                Get Tickets
+                            </a>
+                            <a
+                                href="https://instagram.com/phoenixcomedyunderground"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-zinc-800 hover:text-zinc-600 transition-colors duration-300"
+                            >
+                                <svg
+                                    class="w-10 h-10 transition-transform duration-200 hover:scale-110"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <p
+                            class="text-zinc-600 text-sm font-medium uppercase tracking-wide"
+                        >
+                            21+ Event
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email form footer - only this needs React -->
+        <div
+            class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-4"
+        >
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center space-y-3">
+                    <EmailForm client:load className="max-w-md mx-auto" />
+                    <div
+                        class="flex flex-col sm:flex-row justify-center items-center gap-4 text-xs"
+                    >
+                        <a
+                            href="mailto:contact@phoenixcomedyunderground.com"
+                            class="text-yellow-400/80 hover:text-yellow-300 underline"
+                        >
+                            contact@phoenixcomedyunderground.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -3,7 +3,8 @@ import type { APIRoute } from 'astro';
 import { subscribeSchema } from '@/lib/schemas/subscribers';
 import { subscribersService } from '@/lib/services/subscribers';
 
-export const prerender = false; // Add this line
+// Explicitly disable prerendering for this route only
+export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
     try {
