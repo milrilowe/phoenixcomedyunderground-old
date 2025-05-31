@@ -54,7 +54,8 @@ import { EmailForm } from "./EmailForm";
 
             <!-- Main Content -->
             <main
-                class="flex-3 flex items-center justify-center px-4 pb-20 relative"
+                class="flex-1 flex items-center justify-center px-4 relative"
+                style="padding-bottom: max(8rem, calc(env(safe-area-inset-bottom) + 6rem));"
             >
                 <article class="relative max-w-sm w-full">
                     <div
@@ -113,10 +114,9 @@ import { EmailForm } from "./EmailForm";
                     </div>
                 </article>
 
-                <!-- Scroll indicator with improved safe area handling -->
+                <!-- Scroll indicator with proper positioning within main content -->
                 <div
-                    class="absolute left-1/2 transform -translate-x-1/2 text-center"
-                    style="bottom: max(2rem, calc(env(safe-area-inset-bottom) + 1rem));"
+                    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center pb-safe"
                     aria-label="Scroll down for more information"
                 >
                     <div class="animate-bounce">
