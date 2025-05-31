@@ -26,9 +26,3 @@ if (typeof process !== 'undefined') {
         }
     })
 }
-
-// Export a helper to get a database instance
-export async function withDB<T>(callback: (db: PrismaClient) => Promise<T>): Promise<T> {
-    const db = await getDB()
-    return callback(db)
-}

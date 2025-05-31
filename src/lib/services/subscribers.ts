@@ -24,20 +24,14 @@ export const subscribersService = {
     },
 
     async create(data: SubscribeInput) {
-        try {
-            const db = await getDB()
-            const result = await db.subscriber.create({
-                data,
-                // No select - returns all fields
-            })
-            return {
-                id: result.id,
-                email: result.email,
-                source: result.source
-            }
-        } catch (error) {
-            console.error("Error creating subscriber:", error)
-            throw error
+        const db = await getDB()
+        const result = await db.subscriber.create({
+            data,
+        })
+        return {
+            id: result.id,
+            email: result.email,
+            source: result.source
         }
     },
 }
