@@ -14,5 +14,6 @@ export default defineConfig({
   adapter: vercel({
     webAnalytics: { enabled: true }
   }),
+  publicDir: './public',
   integrations: [react()]
 });
