@@ -1,7 +1,7 @@
 {
     "buildCommand": "prisma generate && npm run build",
     "functions": {
-        "dist/server/pages/api/*.js": {
+        "dist/server/pages/api/subscribe.astro.mjs": {
             "includeFiles": "node_modules/.prisma/client/**"
         }
     }
