@@ -4,7 +4,7 @@ import { EmailForm } from "./EmailForm";
 ---
 
 <section
-    class="md:hidden min-h-screen relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100"
+    class="lg:hidden min-h-screen relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100"
     aria-label="Phoenix Comedy Underground showcase mobile layout"
 >
     <div
@@ -17,7 +17,7 @@ import { EmailForm } from "./EmailForm";
         <div class="h-screen flex flex-col">
             <!-- Header -->
             <header
-                class="flex flex-col cols-1 pt-4 justify-center items-center text-center px-4"
+                class="flex flex-col cols-1 pt-4 justify-center items-center text-center px-4 pt-safe"
             >
                 <h1>
                     <a
@@ -113,9 +113,10 @@ import { EmailForm } from "./EmailForm";
                     </div>
                 </article>
 
-                <!-- Scroll indicator with safe area padding -->
+                <!-- Scroll indicator with proper safe area spacing -->
                 <div
-                    class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center pb-safe"
+                    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center"
+                    style="padding-bottom: max(1rem, env(safe-area-inset-bottom));"
                     aria-label="Scroll down for more information"
                 >
                     <div class="animate-bounce">
@@ -142,7 +143,8 @@ import { EmailForm } from "./EmailForm";
 
         <!-- Email form section with safe area padding -->
         <footer
-            class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6 footer-safe"
+            class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6"
+            style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"
         >
             <div class="px-4">
                 <div
