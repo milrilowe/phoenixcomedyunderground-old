@@ -1,21 +1,23 @@
-import { db } from '@/lib/db'
-import type { Prisma } from '@prisma/client'
+import { getDB } from '@/lib/db'
 import type { SubscribeInput } from '@/lib/schemas/subscribers'
 
 export const subscribersService = {
-    getAll() {
+    async getAll() {
+        const db = await getDB()
         return db.subscriber.findMany({
             orderBy: { createdAt: 'desc' },
         })
     },
 
-    getById(id: number) {
+    async getById(id: number) {
+        const db = await getDB()
         return db.subscriber.findUnique({
             where: { id },
         })
     },
 
-    getByEmail(email: string) {
+    async getByEmail(email: string) {
+        const db = await getDB()
         return db.subscriber.findUnique({
             where: { email },
         })
@@ -23,6 +25,7 @@ export const subscribersService = {
 
     async create(data: SubscribeInput) {
         try {
+            const db = await getDB()
             const result = await db.subscriber.create({
                 data,
                 // No select - returns all fields
