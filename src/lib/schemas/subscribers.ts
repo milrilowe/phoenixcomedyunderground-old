@@ -4,6 +4,7 @@ export const emailSchema = z.string().email('Please provide a valid email addres
 
 export const subscribeSchema = z.object({
     email: emailSchema,
+    source: z.string().optional(),
 })
 
 export const subscriberIdSchema = z.number().int().positive('ID must be a positive integer')

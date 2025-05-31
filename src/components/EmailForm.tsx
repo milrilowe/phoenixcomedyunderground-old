@@ -31,18 +31,23 @@ export function EmailForm({ className = "" }) {
         }
     });
 
+    const source = typeof window !== 'undefined'
+        ? localStorage.getItem('qrSource') || 'direct'
+        : 'direct';
+
     const onSubmit = React.useCallback(async (data: { email: string }) => {
+
         startTransition(async () => {
             try {
-                const result = await subscribe({ data });
+                const result = await subscribe({ data: { ...data, source } });
 
                 // Track email signup event
                 if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'sign_up', {
                         method: 'email',
                         event_category: 'engagement',
-                        event_label: result.alreadySubscribed ? 'email_already_subscribed' : 'email_new_subscriber',
-                        value: result.alreadySubscribed ? 0 : 1
+                        event_label: `email_signup_${source}`,
+                        value: 1
                     });
                 }
 

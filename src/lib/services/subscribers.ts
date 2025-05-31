@@ -33,6 +33,7 @@ export const subscribersService = {
             return {
                 id: result.id,
                 email: result.email,
+                source: result.source
             }
         } catch (error) {
             console.error("Error creating subscriber:", error)

@@ -145,10 +145,12 @@ import { EmailForm } from "./EmailForm";
             class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6 footer-safe"
         >
             <div class="px-4">
-                <div class="text-center space-y-4 max-w-md mx-auto">
+                <div
+                    class="flex flex-col cols-1 gap-2 text-center space-y-4 max-w-md mx-auto"
+                >
                     <EmailForm client:load />
 
-                    <div class="py-1 border-t border-yellow-400/20">
+                    <div class="py-3 border-t border-yellow-400/20">
                         <a
                             href="mailto:contact@phoenixcomedyunderground.com"
                             class="text-yellow-400/80 hover:text-yellow-300 underline text-sm"

@@ -117,6 +117,15 @@ const organizationSchema = {
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/cornish-pasty-06-25-2025.png" as="image" />
 
+    <!-- Check for 'src' URLSearchParam -->
+    <script is:inline>
+      const params = new URLSearchParams(window.location.search);
+      const src = params.get("src");
+      if (src) {
+        localStorage.setItem("qrSource", src);
+      }
+    </script>
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-264VJ9QCQP"
     ></script>
