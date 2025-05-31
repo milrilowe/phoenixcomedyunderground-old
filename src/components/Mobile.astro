@@ -14,8 +14,8 @@ import { EmailForm } from "./EmailForm";
     </div>
 
     <div class="relative z-10">
-        <!-- Content that uses dynamic viewport height -->
-        <div class="flex flex-col" style="min-height: 100dvh;">
+        <!-- First viewport: Header + Main content + Scroll indicator -->
+        <div class="flex flex-col" style="height: 100dvh;">
             <!-- Compact Header -->
             <header
                 class="pt-4 px-4 text-center flex-shrink-0"
@@ -56,7 +56,7 @@ import { EmailForm } from "./EmailForm";
 
             <!-- Main Content - Flyer Centered with flexible sizing -->
             <main
-                class="flex-1 flex items-center justify-center px-4 py-4 min-h-0"
+                class="flex-1 flex items-center justify-center px-4 py-2 min-h-0"
             >
                 <article class="relative max-w-sm w-full">
                     <div
@@ -68,7 +68,7 @@ import { EmailForm } from "./EmailForm";
                         <img
                             src="/cornish-pasty-06-25-2025.png"
                             alt="Phoenix Comedy Underground Best of Phoenix Showcase flyer - June 25, 2025 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
-                            class="w-full h-auto object-contain rounded-lg shadow-xl max-h-[60vh]"
+                            class="w-full h-auto object-contain rounded-lg shadow-xl max-h-[65vh]"
                             loading="eager"
                             width="300"
                             height="450"
@@ -116,10 +116,11 @@ import { EmailForm } from "./EmailForm";
                 </article>
             </main>
 
-            <!-- Bottom section with scroll indicator -->
+            <!-- Bottom section with scroll indicator - positioned within viewport -->
             <div
-                class="pb-6 px-4 text-center flex-shrink-0"
-                style="padding-bottom: max(1.5rem, calc(env(safe-area-inset-bottom) + 1rem));"
+                id="scroll-indicator"
+                class="pb-4 px-4 text-center flex-shrink-0 transition-opacity duration-300"
+                style="padding-bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.5rem));"
             >
                 <div class="animate-bounce mb-2">
                     <svg
@@ -187,3 +188,50 @@ import { EmailForm } from "./EmailForm";
         }
     }
 </style>
+
+<script>
+    // Optional: Set CSS custom property for better viewport handling on older browsers
+    function setVH() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }
+
+    // Scroll indicator fade effect
+    function handleScrollIndicator() {
+        const indicator = document.getElementById("scroll-indicator");
+        if (!indicator) return;
+
+        // Get scroll position and total scrollable height
+        const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollableHeight = documentHeight - windowHeight;
+
+        // Calculate scroll percentage (0 to 1)
+        const scrollPercent = Math.min(scrollTop / scrollableHeight, 1);
+
+        // Calculate opacity: starts fading at 70% scroll, fully gone at 100%
+        const fadeStart = 0.7; // Start fading at 70% scroll
+        const fadeRange = 1 - fadeStart; // 30% fade range
+
+        let opacity;
+        if (scrollPercent < fadeStart) {
+            opacity = 1; // Full opacity until 70%
+        } else {
+            // Fade from 1 to 0 between 70% and 100%
+            opacity = 1 - (scrollPercent - fadeStart) / fadeRange;
+        }
+
+        // Apply opacity
+        indicator.style.opacity = Math.max(0, opacity).toString();
+    }
+
+    // Set on load and resize
+    window.addEventListener("load", setVH);
+    window.addEventListener("resize", setVH);
+
+    // Add scroll listener for fade effect
+    window.addEventListener("scroll", handleScrollIndicator, { passive: true });
+    window.addEventListener("load", handleScrollIndicator);
+</script>
