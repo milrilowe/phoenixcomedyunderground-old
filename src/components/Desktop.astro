@@ -156,18 +156,22 @@ import { EmailForm } from "./EmailForm";
                 <div class="flex flex-col cols-1 gap-2 text-center space-y-3">
                     <EmailForm client:load className="max-w-md mx-auto" />
                     <div
-                        class="flex flex-col sm:flex-row justify-center items-center text-xs"
+                        class="flex flex-col sm:flex-row justify-center items-center text-xs space-y-1 sm:space-y-0 sm:space-x-4"
                     >
                         <a
                             href="mailto:contact@phoenixcomedyunderground.com"
                             class="text-yellow-400/80 hover:text-yellow-300 underline"
-                            onclick="gtag('event', 'click', {
-                              event_category: 'contact',
-                              event_label: 'email_contact_desktop',
-                              value: 1
-                            })"
                         >
                             contact@phoenixcomedyunderground.com
+                        </a>
+                        <span class="hidden sm:inline text-yellow-400/60"
+                            >•</span
+                        >
+                        <a
+                            href="/privacy"
+                            class="text-yellow-400/80 hover:text-yellow-300 underline"
+                        >
+                            Privacy Policy
                         </a>
                     </div>
                 </div>

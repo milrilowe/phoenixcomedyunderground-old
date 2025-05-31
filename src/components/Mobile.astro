@@ -150,17 +150,18 @@ import { EmailForm } from "./EmailForm";
                 >
                     <EmailForm client:load />
 
-                    <div class="py-3 border-t border-yellow-400/20">
+                    <div class="py-3 border-t border-yellow-400/20 space-y-2">
                         <a
                             href="mailto:contact@phoenixcomedyunderground.com"
-                            class="text-yellow-400/80 hover:text-yellow-300 underline text-sm"
-                            onclick="gtag('event', 'click', {
-                              event_category: 'contact',
-                              event_label: 'email_contact_mobile',
-                              value: 1
-                            })"
+                            class="text-yellow-400/80 hover:text-yellow-300 underline text-sm block"
                         >
                             contact@phoenixcomedyunderground.com
+                        </a>
+                        <a
+                            href="/privacy"
+                            class="text-yellow-400/80 hover:text-yellow-300 underline text-xs block"
+                        >
+                            Privacy Policy
                         </a>
                     </div>
                 </div>

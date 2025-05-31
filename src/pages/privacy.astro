@@ -1,0 +1,166 @@
+---
+// src/pages/privacy.astro
+import "@/styles/global.css";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>Privacy Policy - Phoenix Comedy Underground</title>
+        <meta
+            name="description"
+            content="Privacy policy for Phoenix Comedy Underground website and email list."
+        />
+        <meta name="robots" content="noindex, follow" />
+    </head>
+    <body
+        class="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 min-h-screen"
+    >
+        <div class="max-w-4xl mx-auto px-4 py-8">
+            <!-- Header -->
+            <header class="text-center mb-8">
+                <a
+                    href="/"
+                    class="inline-block mb-4 text-zinc-600 hover:text-zinc-800 transition-colors"
+                >
+                    ← Back to Phoenix Comedy Underground
+                </a>
+                <h1 class="text-4xl font-black text-zinc-900 mb-2">
+                    Privacy Policy
+                </h1>
+                <p class="text-zinc-600">Last updated: May 31, 2025</p>
+            </header>
+
+            <!-- Content -->
+            <main
+                class="flex flex-col cols-1 bg-white/80 rounded-lg p-8 shadow-lg prose prose-zinc max-w-none gap-3"
+            >
+                <div class="gap-1">
+                    <h2 class="text-xl font-bold">What We Collect</h2>
+                    <div class="space-y-2">
+                        <p>
+                            <strong>Email Addresses</strong>: When you sign up
+                            for our mailing list, we collect your email to send
+                            you updates about upcoming shows.
+                        </p>
+
+                        <p>
+                            <strong>Website Analytics</strong>: We use Google
+                            Analytics to understand how people use our website
+                            (like which pages are popular and how people find
+                            us). This helps us improve the show experience.
+                        </p>
+
+                        <p>
+                            <strong>QR Code Source</strong>: If you visit from a
+                            QR code, we remember where you came from to
+                            understand which promotional materials work best.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <h2 class="text-xl font-bold">
+                            How We Use Your Information
+                        </h2>
+                        <ul class="list-disc pl-10">
+                            <li>
+                                <strong>Email</strong>: Send you comedy show
+                                updates, new event announcements, and occasional
+                                behind-the-scenes content
+                            </li>
+                            <li>
+                                <strong>Analytics</strong>: Improve our website
+                                and understand our audience better
+                            </li>
+                            <li>
+                                <strong>QR Tracking</strong>: See which
+                                promotional efforts are most effective
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="font-bold">We Don't</h2>
+                        <ul class="list-disc pl-10">
+                            <li>Sell your information to anyone</li>
+                            <li>Send spam or excessive emails</li>
+                            <li>
+                                Share your data with third parties (except
+                                Google Analytics)
+                            </li>
+                            <li>
+                                Store payment information (ticket sales handled
+                                by Eventbrite)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold">Your Rights</h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <strong>Unsubscribe anytime</strong> from emails (link
+                            in every email)
+                        </li>
+                        <li>
+                            <strong>Opt out of analytics</strong> by enabling "Do
+                            Not Track" in your browser
+                        </li>
+                        <li>
+                            <strong>Contact us</strong> to delete your information:
+                            <a
+                                href="mailto:contact@phoenixcomedyunderground.com"
+                                >contact@phoenixcomedyunderground.com</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold">Cookies & Local Storage</h2>
+                    <p>We use minimal browser storage to:</p>
+                    <ul>
+                        <li>Remember if you came from a QR code</li>
+                        <li>
+                            Google Analytics functionality (you can disable this
+                            in your browser)
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold">Contact</h2>
+                    <p>
+                        Questions about privacy? Email us: <a
+                            href="mailto:contact@phoenixcomedyunderground.com"
+                            >contact@phoenixcomedyunderground.com</a
+                        >
+                    </p>
+
+                    <hr class="my-8" />
+
+                    <p class="text-center text-zinc-600 italic">
+                        Phoenix Comedy Underground is committed to protecting
+                        your privacy while delivering the best underground
+                        comedy experience in Phoenix.
+                    </p>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="text-center mt-8">
+                <a
+                    href="/"
+                    class="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold px-6 py-3 rounded-none border-4 border-zinc-900 hover:border-zinc-700 transition-all uppercase tracking-wide inline-block"
+                >
+                    Back to Show Info
+                </a>
+            </footer>
+        </div>
+    </body>
+</html>
