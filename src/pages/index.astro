@@ -11,8 +11,8 @@ const seo = {
   description:
     "Phoenix Comedy Underground presents the Best of Phoenix Showcase on June 25 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. Experience the city's top underground comedy talent. 21+ event.",
   canonical: "https://phoenixcomedyunderground.com",
-  ogImage: "https://phoenixcomedyunderground.com/og-image.jpg",
-  twitterImage: "https://phoenixcomedyunderground.com/twitter-card.jpg",
+  ogImage: "https://phoenixcomedyunderground.com/card-preview.png",
+  twitterImage: "https://phoenixcomedyunderground.com/card-preview.png",
 };
 
 // Structured Data
@@ -78,7 +78,16 @@ const organizationSchema = {
     <!-- Basic Meta Tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+
+    <!-- Optional but good to have -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
 
     <!-- SEO Meta Tags -->
     <title>{seo.title}</title>
