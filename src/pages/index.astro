@@ -1,7 +1,6 @@
 ---
 // src/pages/index.astro
 import "@/styles/global.css";
-import { EmailForm } from "../components/EmailForm";
 import Desktop from "@/components/Desktop.astro";
 import Mobile from "@/components/Mobile.astro";
 
@@ -145,6 +144,63 @@ const organizationSchema = {
       }
       gtag("js", new Date());
       gtag("config", "G-264VJ9QCQP");
+    </script>
+
+    <!-- Enhanced Tracking for Flyer Campaign -->
+    <script is:inline>
+      // Track page view with source context
+      window.addEventListener("load", function () {
+        const source = localStorage.getItem("qrSource") || "direct";
+
+        // Track page view with source
+        if (window.gtag) {
+          gtag("event", "page_view", {
+            event_category: "engagement",
+            event_label: `landing_page_${source}`,
+            custom_parameter_1: source,
+            value: 1,
+          });
+        }
+
+        // Track if this is a flyer scan
+        if (source.startsWith("flyer_")) {
+          gtag("event", "flyer_scan", {
+            event_category: "marketing",
+            event_label: source,
+            value: 1,
+          });
+        }
+      });
+
+      // Time on page tracking for engagement measurement
+      let startTime = Date.now();
+      let tracked30s = false;
+      let tracked60s = false;
+
+      setInterval(function () {
+        const timeOnPage = (Date.now() - startTime) / 1000;
+        const source = localStorage.getItem("qrSource") || "direct";
+
+        // Track 30 second engagement
+        if (timeOnPage >= 30 && !tracked30s && source.startsWith("flyer_")) {
+          tracked30s = true;
+          gtag("event", "engagement_30s", {
+            event_category: "engagement",
+            event_label: `flyer_engaged_${source}`,
+            value: 30,
+          });
+        }
+
+        // Track 60 second engagement
+        if (timeOnPage >= 60 && !tracked60s && source.startsWith("flyer_")) {
+          tracked60s = true;
+          gtag("event", "engagement_60s", {
+            event_category: "engagement",
+            event_label: `flyer_engaged_${source}`,
+            value: 60,
+          });
+        }
+      }, 5000); // Check every 5 seconds
     </script>
   </head>
   <body>

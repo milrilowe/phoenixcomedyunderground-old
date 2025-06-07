@@ -91,9 +91,10 @@ import { EmailForm } from "./EmailForm";
                                 class="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-xl px-12 py-6 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-lg transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
                                 aria-label="Get tickets for Phoenix Comedy Underground Best of Phoenix Showcase on Eventbrite"
                                 onclick="gtag('event', 'click', {
-                                  event_category: 'engagement',
-                                  event_label: 'get_tickets_desktop',
-                                  value: 1
+                                    event_category: 'engagement',
+                                    event_label: 'get_tickets_desktop',
+                                    custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
+                                    value: 1
                                 })"
                             >
                                 Get Tickets
@@ -105,9 +106,10 @@ import { EmailForm } from "./EmailForm";
                                 class="text-zinc-800 hover:text-zinc-600 transition-colors duration-300"
                                 aria-label="Follow Phoenix Comedy Underground on Instagram"
                                 onclick="gtag('event', 'click', {
-                                  event_category: 'social',
-                                  event_label: 'instagram_desktop',
-                                  value: 1
+                                    event_category: 'social',
+                                    event_label: 'instagram_desktop',
+                                    custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
+                                    value: 1
                                 })"
                             >
                                 <svg
