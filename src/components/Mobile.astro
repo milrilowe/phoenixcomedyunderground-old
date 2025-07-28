@@ -4,11 +4,11 @@ import { EmailForm } from "./EmailForm";
 ---
 
 <section
-    class="lg:hidden min-h-screen relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100"
+    class="lg:hidden min-h-screen relative bg-gradient-to-br from-gray-50 via-stone-50 to-gray-100"
     aria-label="Phoenix Comedy Underground showcase mobile layout"
 >
     <div
-        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[length:15px_15px]"
+        class="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:15px_15px]"
         aria-hidden="true"
     >
     </div>
@@ -26,7 +26,7 @@ import { EmailForm } from "./EmailForm";
                         href="https://instagram.com/phoenixcomedyunderground"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-zinc-700 hover:text-zinc-600 transition-colors duration-300"
+                        class="inline-flex items-center gap-2 text-red-700 hover:text-red-600 transition-colors duration-300"
                         aria-label="Follow Phoenix Comedy Underground on Instagram"
                         onclick="gtag('event', 'click', {
                             event_category: 'social',
@@ -67,8 +67,8 @@ import { EmailForm } from "./EmailForm";
                     </div>
                     <figure class="relative">
                         <img
-                            src="/cornish-pasty-06-25-2025.png"
-                            alt="Phoenix Comedy Underground Best of Phoenix Showcase flyer - June 25, 2025 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
+                            src="/cornish-pasty-08-06-2025.png"
+                            alt="Phoenix Comedy Underground Standup Showcase - August 6, 2025 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
                             class="w-full h-auto object-contain rounded-lg shadow-xl max-h-[65vh]"
                             loading="eager"
                             width="300"
@@ -76,23 +76,23 @@ import { EmailForm } from "./EmailForm";
                         />
                     </figure>
                     <div
-                        class="absolute -top-2 left-8 w-10 h-5 bg-yellow-200/60 rotate-12 rounded-sm shadow-md border border-yellow-300/40"
+                        class="absolute -top-2 left-8 w-10 h-5 bg-red-300/70 rotate-12 rounded-sm shadow-md border border-red-400/50"
                         aria-hidden="true"
                     >
                     </div>
                     <div
-                        class="absolute -bottom-2 right-12 w-12 h-6 bg-yellow-200/60 -rotate-6 rounded-sm shadow-md border border-yellow-300/40"
+                        class="absolute -bottom-2 right-12 w-12 h-6 bg-red-300/70 -rotate-6 rounded-sm shadow-md border border-red-400/50"
                         aria-hidden="true"
                     >
                     </div>
 
                     <!-- Floating ticket button -->
-                    <div class="absolute -bottom-4 -right-4">
+                    <div class="absolute -bottom-4 -left-4">
                         <a
                             href="https://www.eventbrite.com/e/phoenix-comedy-underground-best-of-phoenix-showcase-tickets-1380218563879"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-lg px-6 py-3 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
+                            class="bg-red-700 text-white hover:bg-red-600 font-bold text-lg px-6 py-3 rounded-none border-4 border-red-700 hover:border-red-600 shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
                             aria-label="Get tickets for Phoenix Comedy Underground Best of Phoenix Showcase on Eventbrite"
                             onclick="gtag('event', 'click', {
                                 event_category: 'engagement',
@@ -108,10 +108,10 @@ import { EmailForm } from "./EmailForm";
                     <!-- Event details -->
                     <div class="absolute -bottom-8 left-4">
                         <div
-                            class="text-zinc-600 text-xs font-medium uppercase tracking-wide bg-amber-50/90 px-2 py-1 rounded border border-zinc-300"
+                            class="text-red-700 text-xs font-medium uppercase tracking-wide bg-white/90 px-2 py-1 rounded border border-stone-300"
                         >
-                            <time datetime="2025-06-25T19:30:00-07:00"
-                                >June 25</time
+                            <time datetime="2025-08-06T19:30:00-07:00"
+                                >August 6</time
                             > • 21+ Event
                         </div>
                     </div>
@@ -126,7 +126,7 @@ import { EmailForm } from "./EmailForm";
             >
                 <div class="animate-bounce mb-2">
                     <svg
-                        class="w-6 h-6 text-zinc-600 mx-auto"
+                        class="w-6 h-6 text-stone-600 mx-auto"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -139,7 +139,7 @@ import { EmailForm } from "./EmailForm";
                             d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                     </svg>
                 </div>
-                <p class="text-zinc-600 text-xs uppercase tracking-wide">
+                <p class="text-stone-600 text-xs uppercase tracking-wide">
                     More
                 </p>
             </div>
@@ -147,7 +147,7 @@ import { EmailForm } from "./EmailForm";
 
         <!-- Footer OUTSIDE of viewport height -->
         <footer
-            class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6"
+            class="border-t-4 border-red-700 bg-red-700 text-white py-6"
             style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"
         >
             <div class="px-4">
@@ -156,16 +156,16 @@ import { EmailForm } from "./EmailForm";
                 >
                     <EmailForm client:load />
 
-                    <div class="py-3 border-t border-yellow-400/20 space-y-2">
+                    <div class="py-3 border-t border-white/20 space-y-2">
                         <a
                             href="mailto:contact@phoenixcomedyunderground.com"
-                            class="text-yellow-400/80 hover:text-yellow-300 underline text-sm block"
+                            class="text-white/90 hover:text-white underline text-sm block"
                         >
                             contact@phoenixcomedyunderground.com
                         </a>
                         <a
                             href="/privacy"
-                            class="text-yellow-400/80 hover:text-yellow-300 underline text-xs block"
+                            class="text-white/90 hover:text-white underline text-xs block"
                         >
                             Privacy Policy
                         </a>
