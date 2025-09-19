@@ -4,236 +4,236 @@ import { EmailForm } from "./EmailForm";
 ---
 
 <section
-    class="lg:hidden min-h-screen relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100"
-    aria-label="Phoenix Comedy Underground showcase mobile layout"
+	class="lg:hidden min-h-screen relative bg-gradient-to-br from-gray-50 via-stone-50 to-gray-100"
+	aria-label="Phoenix Comedy Underground showcase mobile layout"
 >
-    <div
-        class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[length:15px_15px]"
-        aria-hidden="true"
-    >
-    </div>
+	<div
+		class="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:15px_15px]"
+		aria-hidden="true"
+	>
+	</div>
 
-    <div class="relative z-10">
-        <!-- First viewport: Header + Main content + Scroll indicator -->
-        <div class="flex flex-col" style="height: 100dvh;">
-            <!-- Compact Header -->
-            <header
-                class="pt-4 px-4 text-center flex-shrink-0"
-                style="padding-top: max(1rem, env(safe-area-inset-top));"
-            >
-                <h1>
-                    <a
-                        href="https://instagram.com/phoenixcomedyunderground"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 text-zinc-700 hover:text-zinc-600 transition-colors duration-300"
-                        aria-label="Follow Phoenix Comedy Underground on Instagram"
-                        onclick="gtag('event', 'click', {
+	<div class="relative z-10">
+		<!-- First viewport: Header + Main content + Scroll indicator -->
+		<div class="flex flex-col" style="height: 100dvh;">
+			<!-- Compact Header -->
+			<header
+				class="pt-4 px-4 text-center flex-shrink-0"
+				style="padding-top: max(1rem, env(safe-area-inset-top));"
+			>
+				<h1>
+					<a
+						href="https://instagram.com/phoenixcomedyunderground"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 text-red-700 hover:text-red-600 transition-colors duration-300"
+						aria-label="Follow Phoenix Comedy Underground on Instagram"
+						onclick="gtag('event', 'click', {
                             event_category: 'social',
                             event_label: 'instagram_mobile_header',
                             custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
                             value: 1
                         })"
-                    >
-                        <svg
-                            class="w-4 h-4 transition-transform duration-200 hover:scale-110"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            role="img"
-                            aria-label="Instagram"
-                        >
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                            ></path>
-                        </svg>
-                        <span
-                            class="text-sm font-medium uppercase tracking-wider"
-                        >
-                            @phoenixcomedyunderground
-                        </span>
-                    </a>
-                </h1>
-            </header>
+					>
+						<svg
+							class="w-4 h-4 transition-transform duration-200 hover:scale-110"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+							role="img"
+							aria-label="Instagram"
+						>
+							<path
+								d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+							></path>
+						</svg>
+						<span
+							class="text-sm font-medium uppercase tracking-wider"
+						>
+							@phoenixcomedyunderground
+						</span>
+					</a>
+				</h1>
+			</header>
 
-            <!-- Main Content - Flyer Centered with flexible sizing -->
-            <main
-                class="flex-1 flex items-center justify-center px-4 py-2 min-h-0"
-            >
-                <article class="relative max-w-sm w-full">
-                    <div
-                        class="absolute inset-0 translate-x-3 translate-y-3 bg-black/20 rounded-lg blur-sm"
-                        aria-hidden="true"
-                    >
-                    </div>
-                    <figure class="relative">
-                        <img
-                            src="/cornish-pasty-06-25-2025.png"
-                            alt="Phoenix Comedy Underground Best of Phoenix Showcase flyer - June 25, 2025 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
-                            class="w-full h-auto object-contain rounded-lg shadow-xl max-h-[65vh]"
-                            loading="eager"
-                            width="300"
-                            height="450"
-                        />
-                    </figure>
-                    <div
-                        class="absolute -top-2 left-8 w-10 h-5 bg-yellow-200/60 rotate-12 rounded-sm shadow-md border border-yellow-300/40"
-                        aria-hidden="true"
-                    >
-                    </div>
-                    <div
-                        class="absolute -bottom-2 right-12 w-12 h-6 bg-yellow-200/60 -rotate-6 rounded-sm shadow-md border border-yellow-300/40"
-                        aria-hidden="true"
-                    >
-                    </div>
+			<!-- Main Content - Flyer Centered with flexible sizing -->
+			<main
+				class="flex-1 flex items-center justify-center px-4 py-2 min-h-0"
+			>
+				<article class="relative max-w-sm w-full">
+					<div
+						class="absolute inset-0 translate-x-3 translate-y-3 bg-black/20 rounded-lg blur-sm"
+						aria-hidden="true"
+					>
+					</div>
+					<figure class="relative">
+						<img
+							src="/cornish-pasty-09-24-2025.png"
+							alt="Phoenix Comedy Underground Standup Showcase - September 24, 2025 at Cornish Pasty Co. Doors 7:30 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
+							class="w-full h-auto object-contain rounded-lg shadow-xl max-h-[65vh]"
+							loading="eager"
+							width="300"
+							height="450"
+						/>
+					</figure>
+					<div
+						class="absolute -top-2 left-8 w-10 h-5 bg-red-300/70 rotate-12 rounded-sm shadow-md border border-red-400/50"
+						aria-hidden="true"
+					>
+					</div>
+					<div
+						class="absolute -bottom-2 right-12 w-12 h-6 bg-red-300/70 -rotate-6 rounded-sm shadow-md border border-red-400/50"
+						aria-hidden="true"
+					>
+					</div>
 
-                    <!-- Floating ticket button -->
-                    <div class="absolute -bottom-4 -right-4">
-                        <a
-                            href="https://www.eventbrite.com/e/phoenix-comedy-underground-best-of-phoenix-showcase-tickets-1380218563879"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="bg-zinc-900 text-yellow-400 hover:bg-zinc-800 font-bold text-lg px-6 py-3 rounded-none border-4 border-zinc-900 hover:border-zinc-700 shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
-                            aria-label="Get tickets for Phoenix Comedy Underground Best of Phoenix Showcase on Eventbrite"
-                            onclick="gtag('event', 'click', {
+					<!-- Floating ticket button -->
+					<div class="absolute -bottom-4 -left-4">
+						<a
+							href="https://www.eventbrite.com/e/phoenix-comedy-underground-standup-showcase-tickets-1719232684239?aff=oddtdtcreator"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="bg-red-700 text-white hover:bg-red-600 font-bold text-lg px-6 py-3 rounded-none border-4 border-red-700 hover:border-red-600 shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
+							aria-label="Get tickets for Phoenix Comedy Underground Standup Showcase on Eventbrite"
+							onclick="gtag('event', 'click', {
                                 event_category: 'engagement',
                                 event_label: 'get_tickets_mobile',
                                 custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
                                 value: 1
                             })"
-                        >
-                            Get Tickets
-                        </a>
-                    </div>
+						>
+							Get Tickets
+						</a>
+					</div>
 
-                    <!-- Event details -->
-                    <div class="absolute -bottom-8 left-4">
-                        <div
-                            class="text-zinc-600 text-xs font-medium uppercase tracking-wide bg-amber-50/90 px-2 py-1 rounded border border-zinc-300"
-                        >
-                            <time datetime="2025-06-25T19:30:00-07:00"
-                                >June 25</time
-                            > • 21+ Event
-                        </div>
-                    </div>
-                </article>
-            </main>
+					<!-- Event details -->
+					<div class="absolute -bottom-8 left-4">
+						<div
+							class="text-red-700 text-xs font-medium uppercase tracking-wide bg-white/90 px-2 py-1 rounded border border-stone-300"
+						>
+							<time datetime="2025-08-06T19:30:00-07:00"
+								>September 24</time
+							> • 21+ Event
+						</div>
+					</div>
+				</article>
+			</main>
 
-            <!-- Bottom section with scroll indicator - positioned within viewport -->
-            <div
-                id="scroll-indicator"
-                class="pb-4 px-4 text-center flex-shrink-0 transition-opacity duration-300"
-                style="padding-bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.5rem));"
-            >
-                <div class="animate-bounce mb-2">
-                    <svg
-                        class="w-6 h-6 text-zinc-600 mx-auto"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width={2}
-                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </div>
-                <p class="text-zinc-600 text-xs uppercase tracking-wide">
-                    More
-                </p>
-            </div>
-        </div>
+			<!-- Bottom section with scroll indicator - positioned within viewport -->
+			<div
+				id="scroll-indicator"
+				class="pb-4 px-4 text-center flex-shrink-0 transition-opacity duration-300"
+				style="padding-bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.5rem));"
+			>
+				<div class="animate-bounce mb-2">
+					<svg
+						class="w-6 h-6 text-stone-600 mx-auto"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						aria-hidden="true"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width={2}
+							d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+					</svg>
+				</div>
+				<p class="text-stone-600 text-xs uppercase tracking-wide">
+					More
+				</p>
+			</div>
+		</div>
 
-        <!-- Footer OUTSIDE of viewport height -->
-        <footer
-            class="border-t-4 border-zinc-900 bg-zinc-900 text-yellow-400 py-6"
-            style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"
-        >
-            <div class="px-4">
-                <div
-                    class="flex flex-col gap-2 text-center space-y-4 max-w-md mx-auto"
-                >
-                    <EmailForm client:load />
+		<!-- Footer OUTSIDE of viewport height -->
+		<footer
+			class="border-t-4 border-red-700 bg-red-700 text-white py-6"
+			style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"
+		>
+			<div class="px-4">
+				<div
+					class="flex flex-col gap-2 text-center space-y-4 max-w-md mx-auto"
+				>
+					<EmailForm client:load />
 
-                    <div class="py-3 border-t border-yellow-400/20 space-y-2">
-                        <a
-                            href="mailto:contact@phoenixcomedyunderground.com"
-                            class="text-yellow-400/80 hover:text-yellow-300 underline text-sm block"
-                        >
-                            contact@phoenixcomedyunderground.com
-                        </a>
-                        <a
-                            href="/privacy"
-                            class="text-yellow-400/80 hover:text-yellow-300 underline text-xs block"
-                        >
-                            Privacy Policy
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+					<div class="py-3 border-t border-white/20 space-y-2">
+						<a
+							href="mailto:contact@phoenixcomedyunderground.com"
+							class="text-white/90 hover:text-white underline text-sm block"
+						>
+							contact@phoenixcomedyunderground.com
+						</a>
+						<a
+							href="/privacy"
+							class="text-white/90 hover:text-white underline text-xs block"
+						>
+							Privacy Policy
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
 </section>
 
 <style>
-    /* Add CSS custom properties for better viewport handling */
-    :root {
-        /* Fallback for browsers that don't support dvh */
-        --vh: 1vh;
-    }
+	/* Add CSS custom properties for better viewport handling */
+	:root {
+		/* Fallback for browsers that don't support dvh */
+		--vh: 1vh;
+	}
 
-    /* Use JavaScript to set actual viewport height if needed */
-    @supports not (height: 100dvh) {
-        .min-h-screen {
-            min-height: calc(var(--vh, 1vh) * 100);
-        }
-    }
+	/* Use JavaScript to set actual viewport height if needed */
+	@supports not (height: 100dvh) {
+		.min-h-screen {
+			min-height: calc(var(--vh, 1vh) * 100);
+		}
+	}
 </style>
 
 <script>
-    // Optional: Set CSS custom property for better viewport handling on older browsers
-    function setVH() {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-    }
+	// Optional: Set CSS custom property for better viewport handling on older browsers
+	function setVH() {
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty("--vh", `${vh}px`);
+	}
 
-    // Scroll indicator fade effect
-    function handleScrollIndicator() {
-        const indicator = document.getElementById("scroll-indicator");
-        if (!indicator) return;
+	// Scroll indicator fade effect
+	function handleScrollIndicator() {
+		const indicator = document.getElementById("scroll-indicator");
+		if (!indicator) return;
 
-        // Get scroll position and total scrollable height
-        const scrollTop =
-            window.pageYOffset || document.documentElement.scrollTop;
-        const documentHeight = document.documentElement.scrollHeight;
-        const windowHeight = window.innerHeight;
-        const scrollableHeight = documentHeight - windowHeight;
+		// Get scroll position and total scrollable height
+		const scrollTop =
+			window.pageYOffset || document.documentElement.scrollTop;
+		const documentHeight = document.documentElement.scrollHeight;
+		const windowHeight = window.innerHeight;
+		const scrollableHeight = documentHeight - windowHeight;
 
-        // Calculate scroll percentage (0 to 1)
-        const scrollPercent = Math.min(scrollTop / scrollableHeight, 1);
+		// Calculate scroll percentage (0 to 1)
+		const scrollPercent = Math.min(scrollTop / scrollableHeight, 1);
 
-        // Calculate opacity: starts fading at 70% scroll, fully gone at 100%
-        const fadeStart = 0.7; // Start fading at 70% scroll
-        const fadeRange = 1 - fadeStart; // 30% fade range
+		// Calculate opacity: starts fading at 70% scroll, fully gone at 100%
+		const fadeStart = 0.7; // Start fading at 70% scroll
+		const fadeRange = 1 - fadeStart; // 30% fade range
 
-        let opacity;
-        if (scrollPercent < fadeStart) {
-            opacity = 1; // Full opacity until 70%
-        } else {
-            // Fade from 1 to 0 between 70% and 100%
-            opacity = 1 - (scrollPercent - fadeStart) / fadeRange;
-        }
+		let opacity;
+		if (scrollPercent < fadeStart) {
+			opacity = 1; // Full opacity until 70%
+		} else {
+			// Fade from 1 to 0 between 70% and 100%
+			opacity = 1 - (scrollPercent - fadeStart) / fadeRange;
+		}
 
-        // Apply opacity
-        indicator.style.opacity = Math.max(0, opacity).toString();
-    }
+		// Apply opacity
+		indicator.style.opacity = Math.max(0, opacity).toString();
+	}
 
-    // Set on load and resize
-    window.addEventListener("load", setVH);
-    window.addEventListener("resize", setVH);
+	// Set on load and resize
+	window.addEventListener("load", setVH);
+	window.addEventListener("resize", setVH);
 
-    // Add scroll listener for fade effect
-    window.addEventListener("scroll", handleScrollIndicator, { passive: true });
-    window.addEventListener("load", handleScrollIndicator);
+	// Add scroll listener for fade effect
+	window.addEventListener("scroll", handleScrollIndicator, { passive: true });
+	window.addEventListener("load", handleScrollIndicator);
 </script>

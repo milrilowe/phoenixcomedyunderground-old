@@ -101,12 +101,12 @@ export function EmailForm({ className = "" }) {
                                     <Input
                                         type="email"
                                         placeholder="your@email.com"
-                                        className="bg-yellow-400 text-zinc-900 placeholder:text-zinc-600 border-2 border-yellow-400 rounded-none font-medium"
+                                        className="bg-white text-black placeholder:text-stone-600 border-2 border-white rounded-none font-medium focus:border-red-300 focus:ring-0"
                                         onFocus={handleFormFocus}
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormMessage className="text-red-400 text-xs" />
+                                <FormMessage className="text-red-300 text-xs" />
                             </FormItem>
                         )}
                     />
@@ -114,7 +114,7 @@ export function EmailForm({ className = "" }) {
                     <Button
                         type="submit"
                         disabled={isPending}
-                        className="bg-yellow-400 text-zinc-900 hover:bg-yellow-300 font-bold px-6 py-2 rounded-none border-2 border-yellow-400 hover:border-yellow-300 uppercase tracking-wide text-sm"
+                        className="bg-white text-red-700 hover:bg-red-50 font-bold px-6 py-2 rounded-none border-2 border-white hover:border-red-50 uppercase tracking-wide text-sm"
                     >
                         {isPending && <Loader2 className="mr-2 h-3 w-3 animate-spin" />}
                         {buttonText}
