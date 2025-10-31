@@ -1,10 +1,9 @@
 ---
-// src/components/Mobile.astro
 import { EmailForm } from "./EmailForm";
 ---
 
 <section
-	class="lg:hidden min-h-screen relative bg-gradient-to-br from-gray-50 via-stone-50 to-gray-100"
+	class="lg:hidden min-h-screen relative bg-brand-gradient"
 	aria-label="Phoenix Comedy Underground showcase mobile layout"
 >
 	<div
@@ -26,14 +25,8 @@ import { EmailForm } from "./EmailForm";
 						href="https://instagram.com/phoenixcomedyunderground"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 text-red-700 hover:text-red-600 transition-colors duration-300"
+						class="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300"
 						aria-label="Follow Phoenix Comedy Underground on Instagram"
-						onclick="gtag('event', 'click', {
-                            event_category: 'social',
-                            event_label: 'instagram_mobile_header',
-                            custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
-                            value: 1
-                        })"
 					>
 						<svg
 							class="w-4 h-4 transition-transform duration-200 hover:scale-110"
@@ -43,7 +36,24 @@ import { EmailForm } from "./EmailForm";
 							aria-label="Instagram"
 						>
 							<path
-								d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+								d="M12 2.163c3.204 0 3.584.012 4.85.07
+								3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849
+								0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919
+								-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07
+								-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849
+								0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919
+								1.266-.057 1.645-.069 4.849-.069zm0-2.163
+								c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98
+								-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948
+								.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072
+								3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98
+								.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947
+								-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838
+								c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163
+								6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162
+								c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845
+								c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44
+								c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
 							></path>
 						</svg>
 						<span
@@ -55,7 +65,7 @@ import { EmailForm } from "./EmailForm";
 				</h1>
 			</header>
 
-			<!-- Main Content - Flyer Centered with flexible sizing -->
+			<!-- Main Content - Flyer Centered -->
 			<main
 				class="flex-1 flex items-center justify-center px-4 py-2 min-h-0"
 			>
@@ -67,8 +77,8 @@ import { EmailForm } from "./EmailForm";
 					</div>
 					<figure class="relative">
 						<img
-							src="/cornish-pasty-09-24-2025.png"
-							alt="Phoenix Comedy Underground Standup Showcase - September 24, 2025 at Cornish Pasty Co. Doors 7:00 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
+							src="/cornish-pasty-11-05-2025.png"
+							alt="Phoenix Comedy Underground Standup Showcase - November 5, 2025 at Cornish Pasty Co. Doors 7:00 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
 							class="w-full h-auto object-contain rounded-lg shadow-xl max-h-[65vh]"
 							loading="eager"
 							width="300"
@@ -76,49 +86,41 @@ import { EmailForm } from "./EmailForm";
 						/>
 					</figure>
 					<div
-						class="absolute -top-2 left-8 w-10 h-5 bg-red-300/70 rotate-12 rounded-sm shadow-md border border-red-400/50"
-						aria-hidden="true"
+						class="absolute -top-2 left-8 w-10 h-5 bg-accent/70 rotate-12 rounded-sm shadow-md border border-border"
 					>
 					</div>
 					<div
-						class="absolute -bottom-2 right-12 w-12 h-6 bg-red-300/70 -rotate-6 rounded-sm shadow-md border border-red-400/50"
-						aria-hidden="true"
+						class="absolute -bottom-2 right-12 w-12 h-6 bg-accent/70 -rotate-6 rounded-sm shadow-md border border-border"
 					>
 					</div>
 
 					<!-- Floating ticket button -->
-					<div class="absolute -bottom-4 -left-4">
+					<div class="absolute -bottom-12 -left-6">
 						<a
-							href="https://www.eventbrite.com/e/phoenix-comedy-underground-standup-showcase-tickets-1719232684239?aff=oddtdtcreator"
+							href="https://www.eventbrite.com/e/phoenix-comedy-underground-standup-showcase-tickets-1931807330729?aff=oddtdtcreator"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="bg-red-700 text-white hover:bg-red-600 font-bold text-lg px-6 py-3 rounded-none border-4 border-red-700 hover:border-red-600 shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
+							class="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold text-lg px-6 py-3 rounded-none border-4 border-primary hover:border-secondary shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
 							aria-label="Get tickets for Phoenix Comedy Underground Standup Showcase on Eventbrite"
-							onclick="gtag('event', 'click', {
-                                event_category: 'engagement',
-                                event_label: 'get_tickets_mobile',
-                                custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
-                                value: 1
-                            })"
 						>
 							Get Tickets
 						</a>
 					</div>
 
 					<!-- Event details -->
-					<div class="absolute -bottom-8 left-4">
+					<div class="absolute -bottom-16 left-6">
 						<div
-							class="text-red-700 text-xs font-medium uppercase tracking-wide bg-white/90 px-2 py-1 rounded border border-stone-300"
+							class="text-primary text-xs font-medium uppercase tracking-wide bg-white/90 px-2 py-1 rounded border border-border"
 						>
-							<time datetime="2025-08-06T19:30:00-07:00"
-								>September 24</time
+							<time datetime="2025-11-05T20:00:00-07:00"
+								>November 5</time
 							> • 21+ Event
 						</div>
 					</div>
 				</article>
 			</main>
 
-			<!-- Bottom section with scroll indicator - positioned within viewport -->
+			<!-- Bottom section with scroll indicator -->
 			<div
 				id="scroll-indicator"
 				class="pb-4 px-4 text-center flex-shrink-0 transition-opacity duration-300"
@@ -126,7 +128,7 @@ import { EmailForm } from "./EmailForm";
 			>
 				<div class="animate-bounce mb-2">
 					<svg
-						class="w-6 h-6 text-stone-600 mx-auto"
+						class="w-6 h-6 text-secondary mx-auto"
 						fill="none"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
@@ -139,15 +141,15 @@ import { EmailForm } from "./EmailForm";
 							d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
 					</svg>
 				</div>
-				<p class="text-stone-600 text-xs uppercase tracking-wide">
+				<p class="text-secondary text-xs uppercase tracking-wide">
 					More
 				</p>
 			</div>
 		</div>
 
-		<!-- Footer OUTSIDE of viewport height -->
+		<!-- Footer OUTSIDE of viewport -->
 		<footer
-			class="border-t-4 border-red-700 bg-red-700 text-white py-6"
+			class="border-t-4 border-primary bg-primary text-primary-foreground py-6"
 			style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"
 		>
 			<div class="px-4">
@@ -159,13 +161,13 @@ import { EmailForm } from "./EmailForm";
 					<div class="py-3 border-t border-white/20 space-y-2">
 						<a
 							href="mailto:contact@phoenixcomedyunderground.com"
-							class="text-white/90 hover:text-white underline text-sm block"
+							class="text-primary-foreground/90 hover:text-primary-foreground underline text-sm block"
 						>
 							contact@phoenixcomedyunderground.com
 						</a>
 						<a
 							href="/privacy"
-							class="text-white/90 hover:text-white underline text-xs block"
+							class="text-primary-foreground/90 hover:text-primary-foreground underline text-xs block"
 						>
 							Privacy Policy
 						</a>
@@ -177,13 +179,10 @@ import { EmailForm } from "./EmailForm";
 </section>
 
 <style>
-	/* Add CSS custom properties for better viewport handling */
 	:root {
-		/* Fallback for browsers that don't support dvh */
 		--vh: 1vh;
 	}
 
-	/* Use JavaScript to set actual viewport height if needed */
 	@supports not (height: 100dvh) {
 		.min-h-screen {
 			min-height: calc(var(--vh, 1vh) * 100);
@@ -192,48 +191,30 @@ import { EmailForm } from "./EmailForm";
 </style>
 
 <script>
-	// Optional: Set CSS custom property for better viewport handling on older browsers
 	function setVH() {
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty("--vh", `${vh}px`);
 	}
 
-	// Scroll indicator fade effect
 	function handleScrollIndicator() {
 		const indicator = document.getElementById("scroll-indicator");
 		if (!indicator) return;
-
-		// Get scroll position and total scrollable height
 		const scrollTop =
 			window.pageYOffset || document.documentElement.scrollTop;
 		const documentHeight = document.documentElement.scrollHeight;
 		const windowHeight = window.innerHeight;
 		const scrollableHeight = documentHeight - windowHeight;
-
-		// Calculate scroll percentage (0 to 1)
 		const scrollPercent = Math.min(scrollTop / scrollableHeight, 1);
-
-		// Calculate opacity: starts fading at 70% scroll, fully gone at 100%
-		const fadeStart = 0.7; // Start fading at 70% scroll
-		const fadeRange = 1 - fadeStart; // 30% fade range
-
+		const fadeStart = 0.7;
+		const fadeRange = 1 - fadeStart;
 		let opacity;
-		if (scrollPercent < fadeStart) {
-			opacity = 1; // Full opacity until 70%
-		} else {
-			// Fade from 1 to 0 between 70% and 100%
-			opacity = 1 - (scrollPercent - fadeStart) / fadeRange;
-		}
-
-		// Apply opacity
+		if (scrollPercent < fadeStart) opacity = 1;
+		else opacity = 1 - (scrollPercent - fadeStart) / fadeRange;
 		indicator.style.opacity = Math.max(0, opacity).toString();
 	}
 
-	// Set on load and resize
 	window.addEventListener("load", setVH);
 	window.addEventListener("resize", setVH);
-
-	// Add scroll listener for fade effect
 	window.addEventListener("scroll", handleScrollIndicator, { passive: true });
 	window.addEventListener("load", handleScrollIndicator);
 </script>

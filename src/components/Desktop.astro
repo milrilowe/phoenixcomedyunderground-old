@@ -3,12 +3,12 @@ import { EmailForm } from "./EmailForm";
 ---
 
 <section
-	class="hidden lg:block h-screen relative bg-gradient-to-br from-gray-50 via-stone-50 to-gray-100 overflow-hidden"
+	class="hidden lg:block h-screen relative bg-brand-gradient overflow-hidden"
 	aria-label="Phoenix Comedy Underground showcase desktop layout"
 >
 	<!-- Texture overlay -->
 	<div
-		class="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:20px_20px]"
+		class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,_rgba(0,0,0,0.08)_1px,_transparent_1px)] bg-[length:20px_20px]"
 		aria-hidden="true"
 	>
 	</div>
@@ -33,22 +33,21 @@ import { EmailForm } from "./EmailForm";
 							class="relative transform -rotate-1 hover:rotate-0 transition-transform duration-500"
 						>
 							<img
-								src="/cornish-pasty-09-24-2025.png"
-								alt="Phoenix Comedy Underground Best of Phoenix Showcase flyer - September 24, 2025 at Cornish Pasty Co. Doors 7:00 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
+								src="/cornish-pasty-11-05-2025.png"
+								alt="Phoenix Comedy Underground November 5 Showcase Flyer"
 								class="max-w-full h-auto max-h-[75vh] object-contain rounded-lg shadow-xl"
 								loading="eager"
 								width="400"
 								height="600"
 							/>
 						</figure>
+						<!-- Tape accents -->
 						<div
-							class="absolute -top-2 left-12 w-12 h-6 bg-red-300/70 rotate-12 rounded-sm shadow-md border border-red-400/50"
-							aria-hidden="true"
+							class="absolute -top-2 left-12 w-12 h-6 bg-accent/70 rotate-12 rounded-sm shadow-md border border-border"
 						>
 						</div>
 						<div
-							class="absolute -bottom-2 right-16 w-12 h-6 bg-red-300/70 -rotate-6 rounded-sm shadow-md border border-red-400/50"
-							aria-hidden="true"
+							class="absolute -bottom-2 right-16 w-12 h-6 bg-accent/70 -rotate-6 rounded-sm shadow-md border border-border"
 						>
 						</div>
 					</div>
@@ -60,22 +59,16 @@ import { EmailForm } from "./EmailForm";
 				>
 					<div class="space-y-4">
 						<h1
-							class="text-5xl md:text-6xl lg:text-7xl font-black text-black leading-none tracking-tight"
+							class="text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-none tracking-tight"
 						>
-							As above,
-							<br />
-							<span
-								class="text-4xl md:text-5xl lg:text-6xl text-stone-700"
-								>So below</span
+							Did we just<br />
+							<span class="text-secondary"
+								>become best friends?</span
 							>
 						</h1>
-						<div
-							class="w-24 h-1 bg-black mx-auto lg:mx-0"
-							aria-hidden="true"
-						>
-						</div>
+						<div class="w-24 h-1 bg-primary mx-auto lg:mx-0"></div>
 						<p
-							class="text-xl md:text-2xl text-stone-800 font-medium uppercase tracking-wider"
+							class="text-xl md:text-2xl text-foreground font-medium uppercase tracking-wider"
 						>
 							Phoenix Comedy Underground
 						</p>
@@ -86,17 +79,11 @@ import { EmailForm } from "./EmailForm";
 							class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6"
 						>
 							<a
-								href="https://www.eventbrite.com/e/phoenix-comedy-underground-standup-showcase-tickets-1719232684239?aff=oddtdtcreator"
+								href="https://www.eventbrite.com/e/phoenix-comedy-underground-standup-showcase-tickets-1931807330729?aff=oddtdtcreator"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="bg-red-700 text-white hover:bg-red-600 font-bold text-xl px-12 py-6 rounded-none border-4 border-red-700 hover:border-red-600 shadow-lg transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
-								aria-label="Get tickets for Phoenix Comedy Underground Standup Showcase on Eventbrite"
-								onclick="gtag('event', 'click', {
-                                    event_category: 'engagement',
-                                    event_label: 'get_tickets_desktop',
-                                    custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
-                                    value: 1
-                                })"
+								class="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold text-xl px-12 py-6 rounded-none border-4 border-primary hover:border-secondary shadow-lg transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
+								aria-label="Get tickets for Phoenix Comedy Underground November 5 Showcase"
 							>
 								Get Tickets
 							</a>
@@ -104,14 +91,8 @@ import { EmailForm } from "./EmailForm";
 								href="https://instagram.com/phoenixcomedyunderground"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-red-700 hover:text-red-600 transition-colors duration-300"
+								class="text-primary hover:text-secondary transition-colors duration-300"
 								aria-label="Follow Phoenix Comedy Underground on Instagram"
-								onclick="gtag('event', 'click', {
-                                    event_category: 'social',
-                                    event_label: 'instagram_desktop',
-                                    custom_parameter_1: localStorage.getItem('qrSource') || 'direct',
-                                    value: 1
-                                })"
 							>
 								<svg
 									class="w-10 h-10 transition-transform duration-200 hover:scale-110"
@@ -121,17 +102,34 @@ import { EmailForm } from "./EmailForm";
 									aria-label="Instagram"
 								>
 									<path
-										d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+										d="M12 2.163c3.204 0 3.584.012 4.85.07
+		   3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849
+		   0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919
+		   -1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07
+		   -3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849
+		   0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919
+		   1.266-.057 1.645-.069 4.849-.069zm0-2.163
+		   c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98
+		   -.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948
+		   .2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072
+		   3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98
+		   .059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947
+		   -.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838
+		   c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163
+		   6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162
+		   c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845
+		   c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44
+		   c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
 									></path>
 								</svg>
 							</a>
 						</div>
 
 						<!-- Event Details -->
-						<div class="space-y-2 text-black">
+						<div class="space-y-2 text-foreground">
 							<p class="text-lg font-semibold">
-								<time datetime="2025-08-06T19:30:00-07:00"
-									>September 24, 2025</time
+								<time datetime="2025-11-05T20:00:00-07:00"
+									>November 5, 2025</time
 								>
 							</p>
 							<address class="not-italic">
@@ -150,28 +148,30 @@ import { EmailForm } from "./EmailForm";
 			</div>
 		</section>
 
-		<!-- Email form footer -->
-		<footer class="border-t-4 border-red-700 bg-red-700 text-white py-4">
-			<div class="max-w-4xl mx-auto px-4">
-				<div class="flex flex-col cols-1 gap-2 text-center space-y-3">
-					<EmailForm client:load className="max-w-md mx-auto" />
-					<div
-						class="flex flex-col sm:flex-row justify-center items-center text-xs space-y-1 sm:space-y-0 sm:space-x-4"
+		<!-- Footer -->
+		<footer
+			class="border-t-4 border-primary bg-primary text-primary-foreground py-4"
+		>
+			<div class="max-w-4xl mx-auto px-4 text-center space-y-3">
+				<EmailForm client:load className="max-w-md mx-auto" />
+				<div
+					class="flex flex-col sm:flex-row justify-center items-center text-xs sm:space-x-4 space-y-1 sm:space-y-0"
+				>
+					<a
+						href="mailto:contact@phoenixcomedyunderground.com"
+						class="text-primary-foreground/90 hover:text-primary-foreground underline"
 					>
-						<a
-							href="mailto:contact@phoenixcomedyunderground.com"
-							class="text-white/90 hover:text-white underline"
-						>
-							contact@phoenixcomedyunderground.com
-						</a>
-						<span class="hidden sm:inline text-white/70">•</span>
-						<a
-							href="/privacy"
-							class="text-white/90 hover:text-white underline"
-						>
-							Privacy Policy
-						</a>
-					</div>
+						contact@phoenixcomedyunderground.com
+					</a>
+					<span class="hidden sm:inline text-primary-foreground/70"
+						>•</span
+					>
+					<a
+						href="/privacy"
+						class="text-primary-foreground/90 hover:text-primary-foreground underline"
+					>
+						Privacy Policy
+					</a>
 				</div>
 			</div>
 		</footer>
