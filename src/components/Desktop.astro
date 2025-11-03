@@ -1,5 +1,6 @@
 ---
 import { EmailForm } from "./EmailForm";
+import FoodDriveModal from "./FoodDrive.js";
 ---
 
 <section
@@ -119,14 +120,19 @@ import { EmailForm } from "./EmailForm";
 		   6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162
 		   c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845
 		   c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44
-		   c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+		   c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"
 									></path>
 								</svg>
 							</a>
 						</div>
 
-						<!-- Event Details -->
-						<div class="space-y-2 text-foreground">
+						<!-- Food Drive Button -->
+						<div class="flex justify-center lg:justify-start">
+							<FoodDriveModal client:load />
+						</div>
+
+						<!-- Hidden event details for SEO -->
+						<div class="sr-only">
 							<p class="text-lg font-semibold">
 								<time datetime="2025-11-05T20:00:00-07:00"
 									>November 5, 2025</time

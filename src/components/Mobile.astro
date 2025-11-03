@@ -1,5 +1,6 @@
 ---
 import { EmailForm } from "./EmailForm";
+import FoodDriveModal from "./FoodDrive.jsx";
 ---
 
 <section
@@ -17,7 +18,7 @@ import { EmailForm } from "./EmailForm";
 		<div class="flex flex-col" style="height: 100dvh;">
 			<!-- Compact Header -->
 			<header
-				class="pt-4 px-4 text-center flex-shrink-0"
+				class="pt-4 px-4 text-center flex-shrink-0 space-y-6"
 				style="padding-top: max(1rem, env(safe-area-inset-top));"
 			>
 				<h1>
@@ -53,7 +54,7 @@ import { EmailForm } from "./EmailForm";
 								6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162
 								c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845
 								c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44
-								c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+								c.795 0 1.439-.645 1.439-1.40s-.644-1.40-1.439-1.40z"
 							></path>
 						</svg>
 						<span
@@ -63,11 +64,15 @@ import { EmailForm } from "./EmailForm";
 						</span>
 					</a>
 				</h1>
+				<!-- Food Drive Button above flyer -->
+				<div class="w-full max-w-sm">
+					<FoodDriveModal client:load />
+				</div>
 			</header>
 
 			<!-- Main Content - Flyer Centered -->
 			<main
-				class="flex-1 flex items-center justify-center px-4 py-2 min-h-0"
+				class="flex-1 flex flex-col items-center justify-center px-4 py-2 min-h-0 space-y-4"
 			>
 				<article class="relative max-w-sm w-full">
 					<div
@@ -107,15 +112,16 @@ import { EmailForm } from "./EmailForm";
 						</a>
 					</div>
 
-					<!-- Event details -->
-					<div class="absolute -bottom-16 left-6">
-						<div
-							class="text-primary text-xs font-medium uppercase tracking-wide bg-white/90 px-2 py-1 rounded border border-border"
+					<!-- Hidden event details for SEO -->
+					<div class="sr-only">
+						<time datetime="2025-11-05T20:00:00-07:00"
+							>November 5, 2025</time
 						>
-							<time datetime="2025-11-05T20:00:00-07:00"
-								>November 5</time
-							> • 21+ Event
-						</div>
+						<address>
+							Cornish Pasty Co. 7 W. Monroe, Phoenix, AZ
+						</address>
+						<p>Doors: 7:00 PM Show: 8:00 PM</p>
+						<p>21+ Event</p>
 					</div>
 				</article>
 			</main>
