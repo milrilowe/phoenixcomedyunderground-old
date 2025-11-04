@@ -14,67 +14,79 @@ import FoodDriveModal from "./FoodDrive.jsx";
 	</div>
 
 	<div class="relative z-10">
-		<!-- First viewport: Header + Main content + Scroll indicator -->
-		<div class="flex flex-col" style="height: 100dvh;">
-			<!-- Compact Header -->
-			<header
-				class="pt-4 px-4 text-center flex-shrink-0 space-y-6"
-				style="padding-top: max(1rem, env(safe-area-inset-top));"
-			>
-				<h1>
+		<!-- First viewport: Properly distributed content -->
+		<div class="flex flex-col justify-between" style="height: 100dvh;">
+			<!-- Top Section: Header + Tickets -->
+			<div class="flex-shrink-0">
+				<header
+					class="pt-4 px-4 text-center"
+					style="padding-top: max(1rem, env(safe-area-inset-top));"
+				>
+					<h1 class="mb-6">
+						<a
+							href="https://instagram.com/phoenixcomedyunderground"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300"
+							aria-label="Follow Phoenix Comedy Underground on Instagram"
+						>
+							<svg
+								class="w-4 h-4 transition-transform duration-200 hover:scale-110"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								role="img"
+								aria-label="Instagram"
+							>
+								<path
+									d="M12 2.163c3.204 0 3.584.012 4.85.07
+									3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849
+									0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919
+									-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07
+									-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849
+									0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919
+									1.266-.057 1.645-.069 4.849-.069zm0-2.163
+									c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98
+									-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948
+									.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072
+									3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98
+									.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947
+									-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838
+									c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163
+									6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162
+									c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845
+									c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.40
+									c.795 0 1.439-.645 1.439-1.40s-.644-1.40-1.439-1.40z"
+								></path>
+							</svg>
+							<span
+								class="text-sm font-medium uppercase tracking-wider"
+							>
+								@phoenixcomedyunderground
+							</span>
+						</a>
+					</h1>
+				</header>
+
+				<!-- Get Tickets Button -->
+				<div class="px-4 mb-6">
 					<a
-						href="https://instagram.com/phoenixcomedyunderground"
+						href="https://www.eventbrite.com/e/phoenix-comedy-underground-standup-showcase-tickets-1931807330729?aff=oddtdtcreator"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300"
-						aria-label="Follow Phoenix Comedy Underground on Instagram"
+						class="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold text-lg px-6 py-3 rounded-none border-4 border-primary hover:border-secondary shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide block w-full text-center max-w-sm mx-auto"
+						aria-label="Get tickets for Phoenix Comedy Underground Standup Showcase on Eventbrite"
 					>
-						<svg
-							class="w-4 h-4 transition-transform duration-200 hover:scale-110"
-							fill="currentColor"
-							viewBox="0 0 24 24"
-							role="img"
-							aria-label="Instagram"
-						>
-							<path
-								d="M12 2.163c3.204 0 3.584.012 4.85.07
-								3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849
-								0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919
-								-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07
-								-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849
-								0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919
-								1.266-.057 1.645-.069 4.849-.069zm0-2.163
-								c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98
-								-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948
-								.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072
-								3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98
-								.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947
-								-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838
-								c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163
-								6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162
-								c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845
-								c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44
-								c.795 0 1.439-.645 1.439-1.40s-.644-1.40-1.439-1.40z"
-							></path>
-						</svg>
-						<span
-							class="text-sm font-medium uppercase tracking-wider"
-						>
-							@phoenixcomedyunderground
-						</span>
+						Get Tickets
 					</a>
-				</h1>
-				<!-- Food Drive Button above flyer -->
-				<div class="w-full max-w-sm">
-					<FoodDriveModal client:load />
 				</div>
-			</header>
+			</div>
 
-			<!-- Main Content - Flyer Centered -->
+			<!-- Middle Section: Event Flyer and Food Drive with simple gap -->
 			<main
-				class="flex-1 flex flex-col items-center justify-center px-4 py-2 min-h-0 space-y-4"
+				class="flex-1 flex flex-col items-center justify-start px-4 min-h-0 gap-6 pt-4"
 			>
-				<article class="relative max-w-sm w-full">
+				<!-- Event Flyer -->
+				<article class="relative">
 					<div
 						class="absolute inset-0 translate-x-3 translate-y-3 bg-black/20 rounded-lg blur-sm"
 						aria-hidden="true"
@@ -84,32 +96,21 @@ import FoodDriveModal from "./FoodDrive.jsx";
 						<img
 							src="/cornish-pasty-11-05-2025.png"
 							alt="Phoenix Comedy Underground Standup Showcase - November 5, 2025 at Cornish Pasty Co. Doors 7:00 PM, Show 8:00 PM. 21+ event featuring underground comedy talent"
-							class="w-full h-auto object-contain rounded-lg shadow-xl max-h-[65vh]"
+							class="object-contain rounded-lg shadow-xl max-w-full max-h-[55vh] w-auto h-auto"
 							loading="eager"
 							width="300"
 							height="450"
 						/>
 					</figure>
 					<div
-						class="absolute -top-2 left-8 w-10 h-5 bg-accent/70 rotate-12 rounded-sm shadow-md border border-border"
+						class="absolute -top-2 left-4 w-10 h-5 bg-accent/70 rotate-12 rounded-sm shadow-md border border-border"
+						aria-hidden="true"
 					>
 					</div>
 					<div
-						class="absolute -bottom-2 right-12 w-12 h-6 bg-accent/70 -rotate-6 rounded-sm shadow-md border border-border"
+						class="absolute -bottom-2 right-4 w-12 h-6 bg-accent/70 -rotate-6 rounded-sm shadow-md border border-border"
+						aria-hidden="true"
 					>
-					</div>
-
-					<!-- Floating ticket button -->
-					<div class="absolute -bottom-12 -left-6">
-						<a
-							href="https://www.eventbrite.com/e/phoenix-comedy-underground-standup-showcase-tickets-1931807330729?aff=oddtdtcreator"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold text-lg px-6 py-3 rounded-none border-4 border-primary hover:border-secondary shadow-2xl transform hover:scale-105 transition-all duration-200 uppercase tracking-wide inline-block"
-							aria-label="Get tickets for Phoenix Comedy Underground Standup Showcase on Eventbrite"
-						>
-							Get Tickets
-						</a>
 					</div>
 
 					<!-- Hidden event details for SEO -->
@@ -124,36 +125,44 @@ import FoodDriveModal from "./FoodDrive.jsx";
 						<p>21+ Event</p>
 					</div>
 				</article>
+
+				<!-- Food Drive Modal -->
+				<div class="w-full max-w-sm">
+					<FoodDriveModal client:load />
+				</div>
 			</main>
 
-			<!-- Bottom section with scroll indicator -->
-			<div
-				id="scroll-indicator"
-				class="pb-4 px-4 text-center flex-shrink-0 transition-opacity duration-300"
-				style="padding-bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.5rem));"
-			>
-				<div class="animate-bounce mb-2">
-					<svg
-						class="w-6 h-6 text-secondary mx-auto"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-						aria-hidden="true"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width={2}
-							d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-					</svg>
+			<!-- Bottom Section: Scroll Indicator (always visible) -->
+			<div class="flex-shrink-0">
+				<!-- Scroll indicator - Guaranteed to be visible -->
+				<div
+					id="scroll-indicator"
+					class="pb-4 px-4 text-center transition-opacity duration-300"
+					style="padding-bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.5rem));"
+				>
+					<div class="animate-bounce mb-2">
+						<svg
+							class="w-6 h-6 text-secondary mx-auto"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width={2}
+								d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+						</svg>
+					</div>
+					<p class="text-secondary text-xs uppercase tracking-wide">
+						More
+					</p>
 				</div>
-				<p class="text-secondary text-xs uppercase tracking-wide">
-					More
-				</p>
 			</div>
 		</div>
 
-		<!-- Footer OUTSIDE of viewport -->
+		<!-- Footer - Appears when scrolling -->
 		<footer
 			class="border-t-4 border-primary bg-primary text-primary-foreground py-6"
 			style="padding-bottom: max(1.5rem, env(safe-area-inset-bottom));"

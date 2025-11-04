@@ -17,7 +17,16 @@ export default function FoodDrive() {
 				/>
 				<div className="p-4 -mt-4 bg-white">
 					<p className="text-center text-sm font-medium text-gray-800">
-						<strong>We will be collecting food items at this show!</strong><br />
+						<strong>
+							<a
+								href="https://instagram.com/avreynacomedy"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-primary hover:text-secondary transition-colors underline"
+							>
+								@avreynacomedy
+							</a> is organizing a food drive at this show
+						</strong><br />
 						If you'd like to help, bring non-perishable items to donate!
 					</p>
 				</div>
